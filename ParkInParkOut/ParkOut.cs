@@ -8,18 +8,13 @@ using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
-namespace ParkInParkOut
+namespace ParkIn
 {
-    public partial class Form1 : Form
+    public partial class parkOut : Form
     {
-        public Form1()
+        public parkOut()
         {
             InitializeComponent();
-        }
-
-        private void button1_Click(object sender, EventArgs e)
-        {
-            Application.Exit();
         }
     }
 }
