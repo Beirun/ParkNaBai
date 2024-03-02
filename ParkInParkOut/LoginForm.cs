@@ -50,7 +50,6 @@ namespace ParkInParkOut
             button2.FlatAppearance.BorderSize = 0;
             button2.ForeColor = Color.FromArgb(225, 225, 225);
             button2.BackColor = Color.FromArgb(75, 75, 75);
-
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)

@@ -1,4 +1,4 @@
-using ParkIn;
+
 using System;
 using System.Drawing;
 using System.Threading;
@@ -11,9 +11,7 @@ namespace ParkInParkOut
         {
             InitializeComponent();
             Button2();
-            vehicleType();
         }
-
         private void button2_Click(object sender, EventArgs e)
         {
             Application.Exit();
@@ -54,7 +52,12 @@ namespace ParkInParkOut
         }
         private void plateNum_Leave(object sender, EventArgs e)
         {
+            if (plateNum.Text == "")
+            {
+                plateNum.Text = "Plate Number";
 
+                plateNum.ForeColor = Color.DimGray;
+            }
         }
 
         private void comboBox1_SelectedIndexChanged(object sender, EventArgs e)
@@ -69,15 +72,19 @@ namespace ParkInParkOut
 
         private void parkOutButton_Click(object sender, EventArgs e)
         {
-            new parkOut().Show();
+            panel5.Hide();
+            panel6.Show();
         }
 
-        private void comboVehicleType_Click(object sender, EventArgs e)
+        private void submitButton_Click(object sender, EventArgs e)
         {
-
+            panel5.Hide();
         }
-        private void vehicleType() {
-            comboVehicleType.Height = 500;
+
+        private void parkInButton_Click(object sender, EventArgs e)
+        {
+            panel6.Hide();
+            panel5.Show();
         }
     }
 }
