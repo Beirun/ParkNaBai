@@ -30,8 +30,6 @@
         private void InitializeComponent()
         {
             this.button1 = new System.Windows.Forms.Button();
-            this.panel1 = new System.Windows.Forms.Panel();
-            this.panel2 = new System.Windows.Forms.Panel();
             this.checkBox1 = new System.Windows.Forms.CheckBox();
             this.button2 = new System.Windows.Forms.Button();
             this.label2 = new System.Windows.Forms.Label();
@@ -40,6 +38,8 @@
             this.textBox1 = new System.Windows.Forms.TextBox();
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
+            this.panel2 = new System.Windows.Forms.Panel();
+            this.panel1 = new System.Windows.Forms.Panel();
             this.SuspendLayout();
             // 
             // button1
@@ -47,10 +47,10 @@
             this.button1.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.button1.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.button1.ForeColor = System.Drawing.SystemColors.ButtonFace;
-            this.button1.Location = new System.Drawing.Point(906, 12);
+            this.button1.Location = new System.Drawing.Point(919, 1);
             this.button1.Margin = new System.Windows.Forms.Padding(0);
             this.button1.Name = "button1";
-            this.button1.Size = new System.Drawing.Size(25, 30);
+            this.button1.Size = new System.Drawing.Size(30, 32);
             this.button1.TabIndex = 1;
             this.button1.Text = "×";
             this.button1.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
@@ -59,24 +59,6 @@
             this.button1.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button1_MouseDown);
             this.button1.MouseEnter += new System.EventHandler(this.button1_MouseEnter);
             this.button1.MouseLeave += new System.EventHandler(this.button1_MouseLeave);
-            // 
-            // panel1
-            // 
-            this.panel1.BackgroundImage = global::ParkInParkOut.Properties.Resources.sh;
-            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel1.Location = new System.Drawing.Point(-1, -13);
-            this.panel1.Name = "panel1";
-            this.panel1.Size = new System.Drawing.Size(451, 813);
-            this.panel1.TabIndex = 0;
-            // 
-            // panel2
-            // 
-            this.panel2.BackgroundImage = global::ParkInParkOut.Properties.Resources.PARK_NA_BAI;
-            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
-            this.panel2.Location = new System.Drawing.Point(519, 24);
-            this.panel2.Name = "panel2";
-            this.panel2.Size = new System.Drawing.Size(360, 298);
-            this.panel2.TabIndex = 1;
             // 
             // checkBox1
             // 
@@ -169,6 +151,25 @@
             this.textBox4.Name = "textBox4";
             this.textBox4.Size = new System.Drawing.Size(327, 25);
             this.textBox4.TabIndex = 13;
+            this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
+            // 
+            // panel2
+            // 
+            this.panel2.BackgroundImage = global::ParkInParkOut.Properties.Resources.PARK_NA_BAI;
+            this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Location = new System.Drawing.Point(519, 24);
+            this.panel2.Name = "panel2";
+            this.panel2.Size = new System.Drawing.Size(360, 298);
+            this.panel2.TabIndex = 1;
+            // 
+            // panel1
+            // 
+            this.panel1.BackgroundImage = global::ParkInParkOut.Properties.Resources.sh;
+            this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel1.Location = new System.Drawing.Point(-1, -13);
+            this.panel1.Name = "panel1";
+            this.panel1.Size = new System.Drawing.Size(451, 813);
+            this.panel1.TabIndex = 0;
             // 
             // LoginForm
             // 

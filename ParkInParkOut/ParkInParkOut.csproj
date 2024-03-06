@@ -61,11 +61,12 @@
     <Reference Include="System.Xml" />
   </ItemGroup>
   <ItemGroup>
-    <Compile Include="ParkIn.cs">
+    <Compile Include="Calculator.cs" />
+    <Compile Include="Dashboard.cs">
       <SubType>Form</SubType>
     </Compile>
-    <Compile Include="ParkIn.Designer.cs">
-      <DependentUpon>ParkIn.cs</DependentUpon>
+    <Compile Include="Dashboard.Designer.cs">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
@@ -73,13 +74,37 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
+    <Compile Include="parkInPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="parkInPanel.Designer.cs">
+      <DependentUpon>parkInPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="parkOutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="parkOutPanel.Designer.cs">
+      <DependentUpon>parkOutPanel.cs</DependentUpon>
+    </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <EmbeddedResource Include="ParkIn.resx">
-      <DependentUpon>ParkIn.cs</DependentUpon>
+    <Compile Include="parkOutResult.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="parkOutResult.Designer.cs">
+      <DependentUpon>parkOutResult.cs</DependentUpon>
+    </Compile>
+    <EmbeddedResource Include="Dashboard.resx">
+      <DependentUpon>Dashboard.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parkInPanel.resx">
+      <DependentUpon>parkInPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="parkOutPanel.resx">
+      <DependentUpon>parkOutPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -91,6 +116,9 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
+    <EmbeddedResource Include="parkOutResult.resx">
+      <DependentUpon>parkOutResult.cs</DependentUpon>
+    </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>
       <LastGenOutput>Settings.Designer.cs</LastGenOutput>

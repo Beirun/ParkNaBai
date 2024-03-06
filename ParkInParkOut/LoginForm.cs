@@ -101,7 +101,7 @@ namespace ParkInParkOut
             if (textBox4.Text.ToLower().Equals("admin") && textBox3.Text.ToLower().Equals("admin")) {
                 ParkInDash d = new ParkInDash();
                 this.Visible = false;
-                Thread.Sleep(500);
+                Thread.Sleep(250);
                 d.Show();
                 
             }
