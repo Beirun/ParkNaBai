@@ -81,10 +81,10 @@ namespace ParkInParkOut
                 parkoutSmallPanel[i].Size = new Size(1000, 32);
                 parkoutSmallPanel[i].BackColor = Color.AliceBlue;
 
-                parkinTimeLabels[i].BackColor = Color.Red;
-                plateNumberLabels[i].BackColor = Color.Blue;
-                vehicleTypeLabels[i].BackColor = Color.Yellow;
-                vehicleBrandLabels[i].BackColor = Color.Green;
+                parkinTimeLabels[i].BackColor = Color.Transparent;
+                plateNumberLabels[i].BackColor = Color.Transparent;
+                vehicleTypeLabels[i].BackColor = Color.Transparent;
+                vehicleBrandLabels[i].BackColor = Color.Transparent;
                 flowLayoutPanel.Controls.Add(parkoutSmallPanel[i]);
 
 

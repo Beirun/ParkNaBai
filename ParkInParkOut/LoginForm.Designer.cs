@@ -233,7 +233,7 @@
             // 
             this.pictureBox1.BackColor = System.Drawing.Color.Transparent;
             this.pictureBox1.Image = global::ParkInParkOut.Properties.Resources.PARK_NA_BAI;
-            this.pictureBox1.Location = new System.Drawing.Point(522, 35);
+            this.pictureBox1.Location = new System.Drawing.Point(519, 35);
             this.pictureBox1.Name = "pictureBox1";
             this.pictureBox1.Size = new System.Drawing.Size(352, 304);
             this.pictureBox1.SizeMode = System.Windows.Forms.PictureBoxSizeMode.StretchImage;

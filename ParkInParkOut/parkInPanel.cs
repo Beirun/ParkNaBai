@@ -122,5 +122,10 @@ namespace ParkInParkOut
                 comboVehicleBrand.ForeColor = Color.DimGray;
             }
         }
+
+        private void ParkInPanel_Load(object sender, EventArgs e)
+        {
+
+        }
     }
 }

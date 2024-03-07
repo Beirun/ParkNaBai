@@ -37,16 +37,16 @@ namespace ParkInParkOut
             this.parkInButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
-            this.parkInPanel1 = new ParkInParkOut.ParkInPanel();
-            this.parkOutPanel1 = new ParkInParkOut.ParkOutPanel();
             this.parkOutResult1 = new ParkInParkOut.ParkOutResult();
+            this.parkOutPanel1 = new ParkInParkOut.ParkOutPanel();
+            this.parkInPanel1 = new ParkInParkOut.ParkInPanel();
             this.noParkedInMessage1 = new ParkInParkOut.NoParkedInMessage();
             this.panelDash.SuspendLayout();
             this.SuspendLayout();
             // 
             // panelDash
             // 
-            this.panelDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panelDash.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(0)))), ((int)(((byte)(0)))), ((int)(((byte)(64)))));
             this.panelDash.Controls.Add(this.logoutButton);
             this.panelDash.Controls.Add(this.parkOutButton);
             this.panelDash.Controls.Add(this.parkInButton);
@@ -101,7 +101,7 @@ namespace ParkInParkOut
             // 
             // panel1
             // 
-            this.panel1.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
+            this.panel1.BackColor = System.Drawing.Color.Transparent;
             this.panel1.BackgroundImage = global::ParkInParkOut.Properties.Resources.PARK_NA_BAI;
             this.panel1.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
             this.panel1.Location = new System.Drawing.Point(30, 1);
@@ -112,6 +112,7 @@ namespace ParkInParkOut
             // 
             // exitButton
             // 
+            this.exitButton.BackColor = System.Drawing.Color.Transparent;
             this.exitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.exitButton.Font = new System.Drawing.Font("Tahoma", 10F, System.Drawing.FontStyle.Bold);
             this.exitButton.ForeColor = System.Drawing.SystemColors.ButtonFace;
@@ -128,28 +129,28 @@ namespace ParkInParkOut
             this.exitButton.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.exitButton.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
             // 
-            // parkOutPanel1
-            // 
-            this.parkOutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkOutPanel1.Location = new System.Drawing.Point(291, 3);
-            this.parkOutPanel1.Name = "parkOutPanel1";
-            this.parkOutPanel1.Size = new System.Drawing.Size(1032, 799);
-            this.parkOutPanel1.TabIndex = 11;
-            // 
             // parkOutResult1
             // 
             this.parkOutResult1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkOutResult1.Location = new System.Drawing.Point(291, 0);
+            this.parkOutResult1.Location = new System.Drawing.Point(304, -3);
             this.parkOutResult1.Name = "parkOutResult1";
-            this.parkOutResult1.Size = new System.Drawing.Size(1032, 799);
+            this.parkOutResult1.Size = new System.Drawing.Size(1030, 802);
             this.parkOutResult1.TabIndex = 13;
+            // 
+            // parkOutPanel1
+            // 
+            this.parkOutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.parkOutPanel1.Location = new System.Drawing.Point(305, 0);
+            this.parkOutPanel1.Name = "parkOutPanel1";
+            this.parkOutPanel1.Size = new System.Drawing.Size(1030, 799);
+            this.parkOutPanel1.TabIndex = 11;
             // 
             // parkInPanel1
             // 
-            this.parkInPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkInPanel1.Location = new System.Drawing.Point(291, 0);
+            this.parkInPanel1.BackColor = System.Drawing.Color.White;
+            this.parkInPanel1.Location = new System.Drawing.Point(292, -2);
             this.parkInPanel1.Name = "parkInPanel1";
-            this.parkInPanel1.Size = new System.Drawing.Size(1032, 799);
+            this.parkInPanel1.Size = new System.Drawing.Size(1043, 799);
             this.parkInPanel1.TabIndex = 12;
             // 
             // noParkedInMessage1
@@ -188,9 +189,9 @@ namespace ParkInParkOut
         private Button parkOutButton;
         private Button logoutButton;
         private Button exitButton;
-        private ParkOutPanel parkOutPanel1;
         private ParkInPanel parkInPanel1;
-        private ParkOutResult parkOutResult1;
         private NoParkedInMessage noParkedInMessage1;
+        private ParkOutPanel parkOutPanel1;
+        private ParkOutResult parkOutResult1;
     }
 }

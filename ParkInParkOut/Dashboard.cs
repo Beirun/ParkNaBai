@@ -46,16 +46,15 @@ namespace ParkInParkOut
         }
         private void Button2()
         {
-            
             exitButton.TabStop = false;
             exitButton.FlatStyle = FlatStyle.Flat;
-            exitButton.BackColor = SystemColors.WindowFrame;
+            exitButton.BackColor = Color.Purple;
             exitButton.FlatAppearance.BorderSize = 0;
             exitButton.FlatAppearance.MouseDownBackColor = exitButton.BackColor;
         }
         private void button2_MouseLeave(object sender, EventArgs e)
         {
-            exitButton.BackColor = SystemColors.WindowFrame;
+            exitButton.BackColor = Color.Purple;
             exitButton.ForeColor = SystemColors.ButtonFace;
 
         }
@@ -65,7 +64,7 @@ namespace ParkInParkOut
         }
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            exitButton.FlatAppearance.MouseOverBackColor = SystemColors.WindowFrame;
+            exitButton.FlatAppearance.MouseOverBackColor = Color.Purple;
             exitButton.ForeColor = Color.Red;
         }
 
