@@ -5,6 +5,7 @@ using System.Data;
 using System.Drawing;
 using System.Linq;
 using System.Text;
+using System.Threading;
 using System.Threading.Tasks;
 using System.Windows.Forms;
 
@@ -32,12 +33,22 @@ namespace ParkInParkOut
         }
 
         public void setValues() {
+            parkOutTime = DateTime.Now; 
+            Calculator calculator = new Calculator();
             parkInTimeResult.Text = "Park In Time: " + parkInTime;
-            parkOutTimeResult.Text = "Park Out Time: " + DateTime.Now.ToString();
+            parkOutTimeResult.Text = "Park Out Time: " + parkOutTime.ToString();
             labelPlateNumberResult.Text = "Plate Number: " + plateNumber;
             vehicleTypeResult.Text = "Vehicle Type: " + vehicleType;
             vehicleBrandResult.Text = "Vehicle Brand: " + vehicleBrand;
-            
+
+            TimeSpan timeSpan = calculator.getTimeSpan(parkInTime, parkOutTime);
+            int hours = calculator.calculateHours(parkInTime, parkOutTime);
+
+            double hourPoint = hours + calculator.calculateMinutePoint(timeSpan.Minutes);
+            if (timeSpan.Minutes >= 30) hours++;
+            parkingFeeResult.Text = "Parking Fee: " + calculator.parkingFee(hours, vehicleType);
+            parkingTimeResult.Text = "Parking Time: " + hours.ToString("F2") + " Hours";
+
         }
         public void setPlateNumber(String plateNumber) { 
             this.plateNumber = plateNumber;
