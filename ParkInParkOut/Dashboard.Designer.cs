@@ -37,9 +37,10 @@ namespace ParkInParkOut
             this.parkInButton = new System.Windows.Forms.Button();
             this.panel1 = new System.Windows.Forms.Panel();
             this.exitButton = new System.Windows.Forms.Button();
-            this.parkOutPanel1 = new ParkInParkOut.parkOutPanel();
-            this.parkInPanel1 = new ParkInParkOut.parkInPanel(parkOutPanel1, parkOutResult1);
-            this.parkOutResult1 = new ParkInParkOut.parkOutResult();
+            this.parkInPanel1 = new ParkInParkOut.ParkInPanel();
+            this.parkOutPanel1 = new ParkInParkOut.ParkOutPanel();
+            this.parkOutResult1 = new ParkInParkOut.ParkOutResult();
+            this.noParkedInMessage1 = new ParkInParkOut.NoParkedInMessage();
             this.panelDash.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -122,7 +123,7 @@ namespace ParkInParkOut
             this.exitButton.Text = "×";
             this.exitButton.TextImageRelation = System.Windows.Forms.TextImageRelation.TextAboveImage;
             this.exitButton.UseVisualStyleBackColor = false;
-            this.exitButton.Click += new System.EventHandler(this.button2_Click);
+            this.exitButton.Click += new System.EventHandler(this.exitButton_Click);
             this.exitButton.MouseDown += new System.Windows.Forms.MouseEventHandler(this.button2_MouseDown);
             this.exitButton.MouseEnter += new System.EventHandler(this.button2_MouseEnter);
             this.exitButton.MouseLeave += new System.EventHandler(this.button2_MouseLeave);
@@ -135,6 +136,14 @@ namespace ParkInParkOut
             this.parkOutPanel1.Size = new System.Drawing.Size(1032, 799);
             this.parkOutPanel1.TabIndex = 11;
             // 
+            // parkOutResult1
+            // 
+            this.parkOutResult1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.parkOutResult1.Location = new System.Drawing.Point(291, 0);
+            this.parkOutResult1.Name = "parkOutResult1";
+            this.parkOutResult1.Size = new System.Drawing.Size(1032, 799);
+            this.parkOutResult1.TabIndex = 13;
+            // 
             // parkInPanel1
             // 
             this.parkInPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
@@ -143,13 +152,13 @@ namespace ParkInParkOut
             this.parkInPanel1.Size = new System.Drawing.Size(1032, 799);
             this.parkInPanel1.TabIndex = 12;
             // 
-            // parkOutResult1
+            // noParkedInMessage1
             // 
-            this.parkOutResult1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkOutResult1.Location = new System.Drawing.Point(291, 0);
-            this.parkOutResult1.Name = "parkOutResult1";
-            this.parkOutResult1.Size = new System.Drawing.Size(1032, 799);
-            this.parkOutResult1.TabIndex = 13;
+            this.noParkedInMessage1.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.noParkedInMessage1.Location = new System.Drawing.Point(291, 0);
+            this.noParkedInMessage1.Name = "noParkedInMessage1";
+            this.noParkedInMessage1.Size = new System.Drawing.Size(1032, 799);
+            this.noParkedInMessage1.TabIndex = 14;
             // 
             // ParkInDash
             // 
@@ -159,9 +168,10 @@ namespace ParkInParkOut
             this.ClientSize = new System.Drawing.Size(1324, 800);
             this.Controls.Add(this.exitButton);
             this.Controls.Add(this.panelDash);
-            this.Controls.Add(this.parkInPanel1);
             this.Controls.Add(this.parkOutResult1);
             this.Controls.Add(this.parkOutPanel1);
+            this.Controls.Add(this.parkInPanel1);
+            this.Controls.Add(this.noParkedInMessage1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ParkInDash";
@@ -178,8 +188,9 @@ namespace ParkInParkOut
         private Button parkOutButton;
         private Button logoutButton;
         private Button exitButton;
-        private parkOutPanel parkOutPanel1;
-        private parkInPanel parkInPanel1;
-        private parkOutResult parkOutResult1;
+        private ParkOutPanel parkOutPanel1;
+        private ParkInPanel parkInPanel1;
+        private ParkOutResult parkOutResult1;
+        private NoParkedInMessage noParkedInMessage1;
     }
 }

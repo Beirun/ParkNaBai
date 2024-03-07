@@ -12,22 +12,21 @@ using System.Windows.Forms;
 
 namespace ParkInParkOut
 {
-    public partial class parkInPanel : UserControl
+    public partial class ParkInPanel : UserControl
     {
-        parkOutPanel parkOutPanel;
-        parkOutResult parkOutResult;
-        public parkInPanel(parkOutPanel parkOutPanel, parkOutResult parkOutResult)
+        ParkOutPanel parkOutPanel;
+        ParkOutResult parkOutResult;
+        int counter = 0;
+        public ParkInPanel(ParkOutPanel parkOutPanel, ParkOutResult parkOutResult)
         {
             InitializeComponent();
             this.parkOutResult = parkOutResult;
             this.parkOutPanel = parkOutPanel;
         }
-
-        private void plateNumberTextBox_TextChanged(object sender, EventArgs e)
+        public ParkInPanel()
         {
-
+            InitializeComponent();
         }
-
         private void plateNum_Enter(object sender, EventArgs e)
         {
             if (plateNumberTextBox.Text == "Plate Number")
@@ -36,6 +35,7 @@ namespace ParkInParkOut
 
                 plateNumberTextBox.ForeColor = Color.FromArgb(50, 50, 50);
             }
+            errorFillMessage.Hide();
         }
         private void plateNum_Leave(object sender, EventArgs e)
         {
@@ -77,12 +77,48 @@ namespace ParkInParkOut
 
         private void submitButton_Click(object sender, EventArgs e)
         {
+            if(plateNumberTextBox.Text.Equals("Plate Number") || plateNumberTextBox.Text.Equals("") ||
+                comboVehicleType.Text.Equals("Vehicle Type") || comboVehicleType.Text.Equals("") ||
+                comboVehicleBrand.Text.Equals("Vehicle Brand") || comboVehicleType.Text.Equals("")) 
+            {
+                errorFillMessage.Show();  
+            }
+            counter++;
             parkOutPanel.addParkInTime(DateTime.Now.ToString());
             parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
             parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
             parkOutPanel.addVehicleType(comboVehicleType.Text);
             parkOutPanel.parkedInVehicles();
 
+        }
+        public int getCounter() { 
+            return counter;
+        }
+        public void setCounter()
+        {
+            counter--;
+        }
+        private void showIncorrectMessage(object sender, EventArgs e)
+        {
+            errorFillMessage.Hide();
+        }
+
+        private void comboVehicleType_Leave(object sender, EventArgs e)
+        {
+            if (comboVehicleType.Text == "")
+            {
+                comboVehicleType.Text = "Vehicle Type";
+                comboVehicleType.ForeColor = Color.DimGray;
+            }
+        }
+
+        private void comboVehicleBrand_Leave(object sender, EventArgs e)
+        {
+            if (comboVehicleBrand.Text == "")
+            {
+                comboVehicleBrand.Text = "Vehicle Brand";
+                comboVehicleBrand.ForeColor = Color.DimGray;
+            }
         }
     }
 }

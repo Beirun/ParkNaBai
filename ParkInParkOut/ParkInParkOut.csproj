@@ -74,25 +74,31 @@
     <Compile Include="LoginForm.Designer.cs">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </Compile>
-    <Compile Include="parkInPanel.cs">
+    <Compile Include="NoParkedInMessage.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="parkInPanel.Designer.cs">
-      <DependentUpon>parkInPanel.cs</DependentUpon>
+    <Compile Include="NoParkedInMessage.Designer.cs">
+      <DependentUpon>NoParkedInMessage.cs</DependentUpon>
     </Compile>
-    <Compile Include="parkOutPanel.cs">
+    <Compile Include="ParkInPanel.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="parkOutPanel.Designer.cs">
-      <DependentUpon>parkOutPanel.cs</DependentUpon>
+    <Compile Include="ParkInPanel.Designer.cs">
+      <DependentUpon>ParkInPanel.cs</DependentUpon>
+    </Compile>
+    <Compile Include="ParkOutPanel.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ParkOutPanel.Designer.cs">
+      <DependentUpon>ParkOutPanel.cs</DependentUpon>
     </Compile>
     <Compile Include="Program.cs" />
     <Compile Include="Properties\AssemblyInfo.cs" />
-    <Compile Include="parkOutResult.cs">
+    <Compile Include="ParkOutResult.cs">
       <SubType>UserControl</SubType>
     </Compile>
-    <Compile Include="parkOutResult.Designer.cs">
-      <DependentUpon>parkOutResult.cs</DependentUpon>
+    <Compile Include="ParkOutResult.Designer.cs">
+      <DependentUpon>ParkOutResult.cs</DependentUpon>
     </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
@@ -100,11 +106,14 @@
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="parkInPanel.resx">
-      <DependentUpon>parkInPanel.cs</DependentUpon>
+    <EmbeddedResource Include="NoParkedInMessage.resx">
+      <DependentUpon>NoParkedInMessage.cs</DependentUpon>
     </EmbeddedResource>
-    <EmbeddedResource Include="parkOutPanel.resx">
-      <DependentUpon>parkOutPanel.cs</DependentUpon>
+    <EmbeddedResource Include="ParkInPanel.resx">
+      <DependentUpon>ParkInPanel.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ParkOutPanel.resx">
+      <DependentUpon>ParkOutPanel.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="Properties\Resources.resx">
       <Generator>ResXFileCodeGenerator</Generator>
@@ -116,8 +125,8 @@
       <DependentUpon>Resources.resx</DependentUpon>
       <DesignTime>True</DesignTime>
     </Compile>
-    <EmbeddedResource Include="parkOutResult.resx">
-      <DependentUpon>parkOutResult.cs</DependentUpon>
+    <EmbeddedResource Include="ParkOutResult.resx">
+      <DependentUpon>ParkOutResult.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

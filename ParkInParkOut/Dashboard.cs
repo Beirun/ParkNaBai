@@ -8,20 +8,41 @@ namespace ParkInParkOut
 {
     public partial class ParkInDash : Form
     {
-        DateTime parkIn;
-        DateTime parkOut;
-        String vehicleType;
-        String vehicleBrand;
-        String plateNumber;
+        
+        ParkInPanel parkInPanel2;
         public ParkInDash()
         {
             InitializeComponent();
+            this.Controls.Remove(parkInPanel1);
+            instantiatePanels();
             this.StartPosition = FormStartPosition.CenterScreen;
             Button2();
+            parkOutResult1.Hide();
+            parkOutPanel1.Hide();
+            noParkedInMessage1.Hide();
         }
+        private void instantiatePanels() {
+            
+            parkOutPanel1.setParkOutResult(parkOutResult1);
+
+            parkInPanel2 = new ParkInPanel(parkOutPanel1, parkOutResult1);
+            this.parkInPanel2.BackColor = System.Drawing.SystemColors.WindowFrame;
+            this.parkInPanel2.Location = new System.Drawing.Point(220, 0);
+            this.parkInPanel2.Name = "parkInPanel1";
+            this.parkInPanel2.Size = new System.Drawing.Size(1032, 799);
+            this.parkInPanel2.TabIndex = 12;
+            this.Controls.Add(parkInPanel2);
+            parkOutPanel1.setParkInPanel(parkInPanel2);
+
+
+        }
+        
         private void button2_Click(object sender, EventArgs e)
         {
-            Application.Exit();
+            LoginForm loginForm = new LoginForm(this, parkInPanel2, parkOutPanel1, parkOutResult1, noParkedInMessage1);
+            this.Visible = false;
+            Thread.Sleep(250);
+            loginForm.Show();
         }
         private void Button2()
         {
@@ -52,11 +73,20 @@ namespace ParkInParkOut
 
         private void parkOutButton_Click(object sender, EventArgs e)
         {
-            parkInPanel1.Hide();
+            parkInPanel2.Hide();
             parkOutResult1.Hide();
-            parkOutPanel1.Show();
-            parkOutPanel1.Invalidate();
-            this.Invalidate();
+            
+            if (parkInPanel2.getCounter()==0)
+            {
+                noParkedInMessage1.Show();
+                parkOutPanel1.Hide();
+            }
+            else
+            {
+                parkOutPanel1.Show();
+                parkOutPanel1.Invalidate();
+                noParkedInMessage1.Hide();
+            }
         }
 
         
@@ -64,13 +94,15 @@ namespace ParkInParkOut
         private void parkInButton_Click(object sender, EventArgs e)
         {
 
-            parkInPanel1.Show();
+            parkInPanel2.Show();
             parkOutResult1.Hide();
             parkOutPanel1.Hide();
+            noParkedInMessage1.Hide();
         }
 
-       
-
-        
+        private void exitButton_Click(object sender, EventArgs e)
+        {
+            Application.Exit();
+        }
     }
 }

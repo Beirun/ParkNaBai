@@ -8,8 +8,27 @@ namespace ParkInParkOut
 {
     public partial class LoginForm : Form
     {
+        ParkInDash d;
+        ParkInPanel parkInPanel;
+        ParkOutPanel parkOutPanel;
+        ParkOutResult parkOutResult;
+        NoParkedInMessage noParkedInMessage;
+        Boolean isEntered = false;
         public LoginForm()
         {
+            InitializeComponent();
+            this.StartPosition = FormStartPosition.CenterScreen;
+            Button1();
+            textBoxes();
+            Button2();
+        }
+        public LoginForm(ParkInDash d, ParkInPanel parkInPanel, ParkOutPanel parkOutPanel, ParkOutResult parkOutResult, NoParkedInMessage noParkedInMessage)
+        {
+            this.d = d;
+            this.parkInPanel = parkInPanel;
+            this.parkOutPanel = parkOutPanel;
+            this.parkOutResult = parkOutResult;
+            this.noParkedInMessage = noParkedInMessage;
             InitializeComponent();
             this.StartPosition = FormStartPosition.CenterScreen;
             Button1();
@@ -44,6 +63,7 @@ namespace ParkInParkOut
             button1.BackColor = Color.FromArgb(50, 50, 50);
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = button1.BackColor;
+            incorrectUserOrPasswordMessage.Hide();
         }
         private void Button2() {
             button2.FlatStyle = FlatStyle.Flat;
@@ -62,7 +82,7 @@ namespace ParkInParkOut
             if (textBox3.PasswordChar != textBox1.PasswordChar)
             {
                 textBox3.PasswordChar = textBox1.PasswordChar;
-                textBox3.Font = new Font("Microsoft Sans Serif", 8, FontStyle.Regular);
+                textBox3.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Regular);
 
             }
             else
@@ -74,8 +94,6 @@ namespace ParkInParkOut
         }
 
         private void textBoxes() {
-            //textBox1.TextAlign = VerticalAlignment.Center;
-            //textBox2.TextAlign = VerticalAlignment.Cen;
             textBox2.BackColor = Color.FromArgb(255, 255, 255);
             textBox1.BackColor = Color.FromArgb(255, 255, 255);
             textBox3.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
@@ -99,17 +117,44 @@ namespace ParkInParkOut
         private void button2_Click(object sender, EventArgs e)
         {
             if (textBox4.Text.ToLower().Equals("admin") && textBox3.Text.ToLower().Equals("admin")) {
-                ParkInDash d = new ParkInDash();
+                if (d == null) d = new ParkInDash();
+                else
+                {
+                    parkOutPanel.Hide();
+                    parkOutResult.Hide();
+                    noParkedInMessage.Hide();
+                    parkInPanel.Show();
+                }
                 this.Visible = false;
                 Thread.Sleep(250);
                 d.Show();
-                
+
+
             }
+            else if(!isEntered)
+            {
+                incorrectUserOrPasswordMessage.Show();
+            }
+            else { incorrectUserOrPasswordMessage.Show(); }
         }
 
         private void textBox3_KeyPress(object sender, KeyPressEventArgs e)
         {
-            if (e.KeyChar == (char)Keys.Enter) button2_Click(sender, e);
+            if (e.KeyChar == (char)Keys.Enter)
+            {
+                isEntered = true;
+                button2_Click(sender, e);
+            }
         }
+
+        private void incorrectUserOrPasswordMessage_Click(object sender, EventArgs e)
+        {
+            
+        }
+
+        private void showIncorrectMessage(object sender, EventArgs e) {
+            incorrectUserOrPasswordMessage.Hide();
+        }
+
     }
 }

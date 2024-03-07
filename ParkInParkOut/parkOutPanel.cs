@@ -11,7 +11,7 @@ using System.Windows.Forms;
 
 namespace ParkInParkOut
 {
-    public partial class parkOutPanel : UserControl
+    public partial class ParkOutPanel : UserControl
     {
         FlowLayoutPanel[] parkoutSmallPanel;
         Label[] plateNumberLabels;
@@ -23,26 +23,21 @@ namespace ParkInParkOut
         List<String> plateNumber = new List<String>();
         List<String> vehicleType = new List<String>();
         List<String> vehicleBrand = new List<String>();
-        public parkOutPanel()
+        int index = 0;
+        ParkInDash dash;
+        ParkOutResult parkOutResult;
+        ParkInPanel parkInPanel;
+
+        public ParkOutPanel()
         {
             InitializeComponent();
         }
-        public void addParkInTime(String parkInTime)
+        public ParkOutPanel(ParkInDash dash)
         {
-            this.parkInTime.Add(parkInTime);
+            this.dash = dash;
+            InitializeComponent();
         }
-        public void addPlateNumber(String plateNumber)
-        {
-            this.plateNumber.Add(plateNumber);
-        }
-        public void addVehicleType(String vehicleType)
-        {
-            this.vehicleType.Add(vehicleType);
-        }
-        public void addVehicleBrand(String vehicleBrand)
-        {
-            this.vehicleBrand.Add(vehicleBrand);
-        }
+
         public void parkedInVehicles()
         {
             flowLayoutPanel.Controls.Clear();
@@ -73,6 +68,8 @@ namespace ParkInParkOut
                 parkinTimeLabels[i].Size = new Size(140, 29);
                 plateNumberLabels[i].Size = new Size(140, 29);
                 parkOutButtons[i].Size = new Size(100, 29);
+                index = i;
+                parkOutButtons[i].MouseClick += ParkOutPanel_MouseClick;
 
                 parkinTimeLabels[i].TextAlign = ContentAlignment.MiddleCenter;
                 plateNumberLabels[i].TextAlign = ContentAlignment.MiddleCenter;
@@ -102,6 +99,49 @@ namespace ParkInParkOut
                 parkoutSmallPanel[i].Controls.Add(parkOutButtons[i]);
             }
 
+            
+
+        }
+
+        private void ParkOutPanel_MouseClick(object sender, EventArgs e)
+        {
+            parkOutResult.setParkInTime(parkInTime[index]);
+            parkOutResult.setPlateNumber(plateNumber[index]);
+            parkOutResult.setVehicleType(vehicleType[index]);
+            parkOutResult.setVehicleBrand(vehicleBrand[index]);
+            parkOutResult.Show();
+            parkOutResult.setValues();
+            parkInPanel.setCounter();
+            this.Hide();
+            plateNumber.RemoveAt(index);
+            vehicleBrand.RemoveAt(index);
+            vehicleType.RemoveAt(index);
+            parkInTime.RemoveAt(index);
+            parkedInVehicles();
+            
+        }
+        public void setParkInPanel(ParkInPanel parkInPanel) { 
+            this.parkInPanel = parkInPanel;
+        }
+        public void setParkOutResult(ParkOutResult parkOutResult) { 
+            this.parkOutResult = parkOutResult;
+        }
+
+        public void addParkInTime(String parkInTime)
+        {
+            this.parkInTime.Add(parkInTime);
+        }
+        public void addPlateNumber(String plateNumber)
+        {
+            this.plateNumber.Add(plateNumber);
+        }
+        public void addVehicleType(String vehicleType)
+        {
+            this.vehicleType.Add(vehicleType);
+        }
+        public void addVehicleBrand(String vehicleBrand)
+        {
+            this.vehicleBrand.Add(vehicleBrand);
         }
     }
 }

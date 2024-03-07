@@ -39,7 +39,9 @@
             this.textBox3 = new System.Windows.Forms.TextBox();
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel2 = new System.Windows.Forms.Panel();
+            this.incorrectUserOrPasswordMessage = new System.Windows.Forms.Label();
             this.panel1 = new System.Windows.Forms.Panel();
+            this.panel2.SuspendLayout();
             this.SuspendLayout();
             // 
             // button1
@@ -134,33 +136,50 @@
             this.textBox3.BackColor = System.Drawing.SystemColors.Window;
             this.textBox3.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.textBox3.Font = new System.Drawing.Font("Microsoft Sans Serif", 10F);
-            this.textBox3.Location = new System.Drawing.Point(535, 476);
-            this.textBox3.Multiline = true;
+            this.textBox3.Location = new System.Drawing.Point(535, 475);
             this.textBox3.Name = "textBox3";
             this.textBox3.PasswordChar = '*';
-            this.textBox3.Size = new System.Drawing.Size(327, 24);
+            this.textBox3.Size = new System.Drawing.Size(327, 19);
             this.textBox3.TabIndex = 14;
+            this.textBox3.TextChanged += new System.EventHandler(this.showIncorrectMessage);
+            this.textBox3.Enter += new System.EventHandler(this.showIncorrectMessage);
             this.textBox3.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // textBox4
             // 
             this.textBox4.BorderStyle = System.Windows.Forms.BorderStyle.None;
-            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.2F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
-            this.textBox4.Location = new System.Drawing.Point(535, 373);
-            this.textBox4.Multiline = true;
+            this.textBox4.Font = new System.Drawing.Font("Microsoft Sans Serif", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.textBox4.Location = new System.Drawing.Point(533, 372);
             this.textBox4.Name = "textBox4";
-            this.textBox4.Size = new System.Drawing.Size(327, 25);
+            this.textBox4.Size = new System.Drawing.Size(327, 21);
             this.textBox4.TabIndex = 13;
+            this.textBox4.TextChanged += new System.EventHandler(this.showIncorrectMessage);
+            this.textBox4.Enter += new System.EventHandler(this.showIncorrectMessage);
             this.textBox4.KeyPress += new System.Windows.Forms.KeyPressEventHandler(this.textBox3_KeyPress);
             // 
             // panel2
             // 
             this.panel2.BackgroundImage = global::ParkInParkOut.Properties.Resources.PARK_NA_BAI;
             this.panel2.BackgroundImageLayout = System.Windows.Forms.ImageLayout.Stretch;
+            this.panel2.Controls.Add(this.incorrectUserOrPasswordMessage);
             this.panel2.Location = new System.Drawing.Point(519, 24);
             this.panel2.Name = "panel2";
             this.panel2.Size = new System.Drawing.Size(360, 298);
             this.panel2.TabIndex = 1;
+            // 
+            // incorrectUserOrPasswordMessage
+            // 
+            this.incorrectUserOrPasswordMessage.AutoSize = true;
+            this.incorrectUserOrPasswordMessage.BackColor = System.Drawing.Color.Transparent;
+            this.incorrectUserOrPasswordMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.incorrectUserOrPasswordMessage.Font = new System.Drawing.Font("Britannic Bold", 10.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.incorrectUserOrPasswordMessage.ForeColor = System.Drawing.Color.Red;
+            this.incorrectUserOrPasswordMessage.Location = new System.Drawing.Point(43, 245);
+            this.incorrectUserOrPasswordMessage.Name = "incorrectUserOrPasswordMessage";
+            this.incorrectUserOrPasswordMessage.Size = new System.Drawing.Size(277, 20);
+            this.incorrectUserOrPasswordMessage.TabIndex = 0;
+            this.incorrectUserOrPasswordMessage.Text = "Incorrect Username or Password";
+            this.incorrectUserOrPasswordMessage.Click += new System.EventHandler(this.incorrectUserOrPasswordMessage_Click);
             // 
             // panel1
             // 
@@ -191,6 +210,8 @@
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Name = "LoginForm";
             this.Text = "Form1";
+            this.panel2.ResumeLayout(false);
+            this.panel2.PerformLayout();
             this.ResumeLayout(false);
             this.PerformLayout();
 
@@ -209,6 +230,7 @@
         private System.Windows.Forms.TextBox textBox1;
         private System.Windows.Forms.TextBox textBox3;
         private System.Windows.Forms.TextBox textBox4;
+        private System.Windows.Forms.Label incorrectUserOrPasswordMessage;
     }
 }
 

@@ -1,6 +1,6 @@
 ﻿namespace ParkInParkOut
 {
-    partial class parkOutPanel
+    partial class ParkOutPanel
     {
         /// <summary> 
         /// Required designer variable.
