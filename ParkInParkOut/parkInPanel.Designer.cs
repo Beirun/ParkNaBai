@@ -57,6 +57,7 @@
             this.comboVehicleBrand.BorderColor = System.Drawing.Color.White;
             this.comboVehicleBrand.BorderSize = 2;
             this.comboVehicleBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comboVehicleBrand.Enabled = false;
             this.comboVehicleBrand.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12.6F);
             this.comboVehicleBrand.ForeColor = System.Drawing.Color.White;
             this.comboVehicleBrand.IconColor = System.Drawing.Color.Fuchsia;
