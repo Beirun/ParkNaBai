@@ -34,7 +34,21 @@ namespace ParkInParkOut
             Button1();
             textBoxes();
             Button2();
+ 
         }
+
+
+        private void LoginForm_Load(object sender, EventArgs e) {
+            label1.Parent = gradientPanel1;
+            label1.BackColor = Color.Transparent;
+
+            label2.Parent = gradientPanel1;
+            label2.BackColor = Color.Transparent;
+
+            checkBox1.Parent = gradientPanel1;
+            checkBox1.BackColor = Color.Transparent;
+        }
+ 
 
         private void button1_Click(object sender, EventArgs e)
         {
@@ -43,14 +57,14 @@ namespace ParkInParkOut
        
         private void button1_MouseEnter(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(42,42,42);
+            button1.BackColor = Color.Navy;
             button1.ForeColor = Color.Red;
         }
 
 
         private void button1_MouseLeave(object sender, EventArgs e)
         {
-            button1.BackColor = Color.FromArgb(50, 50, 50);
+            button1.BackColor = Color.Navy;
             button1.ForeColor = SystemColors.ButtonFace;
 
         }
@@ -60,7 +74,7 @@ namespace ParkInParkOut
             button2.TabStop = false;
             button1.TabStop = false;
             button1.FlatStyle = FlatStyle.Flat;
-            button1.BackColor = Color.FromArgb(50, 50, 50);
+            button1.BackColor = Color.Navy;
             button1.FlatAppearance.BorderSize = 0;
             button1.FlatAppearance.MouseDownBackColor = button1.BackColor;
             incorrectUserOrPasswordMessage.Hide();
@@ -69,7 +83,7 @@ namespace ParkInParkOut
             button2.FlatStyle = FlatStyle.Flat;
             button2.FlatAppearance.BorderSize = 0;
             button2.ForeColor = Color.FromArgb(225, 225, 225);
-            button2.BackColor = Color.FromArgb(75, 75, 75);
+            button2.BackColor = Color.Navy;
         }
 
         private void button1_MouseDown(object sender, MouseEventArgs e)
@@ -102,15 +116,15 @@ namespace ParkInParkOut
 
         private void button2_MouseEnter(object sender, EventArgs e)
         {
-            button2.ForeColor = Color.FromArgb(255,255,255);
-            button2.BackColor = Color.FromArgb(100,100,100);
+            button2.ForeColor = Color.Navy;
+            button2.BackColor = Color.White;
         }
 
         private void button2_MouseLeave(object sender, EventArgs e)
         {
 
             button2.ForeColor = Color.FromArgb(225, 225, 225);
-            button2.BackColor = Color.FromArgb(75, 75, 75);
+            button2.BackColor = Color.Navy;
 
         }
 

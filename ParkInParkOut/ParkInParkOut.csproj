@@ -68,6 +68,9 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="GradientPanel.cs">
+      <SubType>Component</SubType>
+    </Compile>
     <Compile Include="LoginForm.cs">
       <SubType>Form</SubType>
     </Compile>
@@ -158,6 +161,18 @@
       <ProductName>.NET Framework 3.5 SP1</ProductName>
       <Install>false</Install>
     </BootstrapperPackage>
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\GradientBG.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\Untitled design %283%29.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\passwordIcon.png" />
+  </ItemGroup>
+  <ItemGroup>
+    <None Include="Resources\usernameicon.png" />
   </ItemGroup>
   <Import Project="$(MSBuildToolsPath)\Microsoft.CSharp.targets" />
 </Project>
