@@ -77,19 +77,21 @@ namespace ParkInParkOut
 
         private void submitButton_Click(object sender, EventArgs e)
         {
-            if(plateNumberTextBox.Text.Equals("Plate Number") || plateNumberTextBox.Text.Equals("") ||
+            if (plateNumberTextBox.Text.Equals("Plate Number") || plateNumberTextBox.Text.Equals("") ||
                 comboVehicleType.Text.Equals("Vehicle Type") || comboVehicleType.Text.Equals("") ||
-                comboVehicleBrand.Text.Equals("Vehicle Brand") || comboVehicleType.Text.Equals("")) 
+                comboVehicleBrand.Text.Equals("Vehicle Brand") || comboVehicleType.Text.Equals(""))
             {
-                errorFillMessage.Show();  
+                errorFillMessage.Show();
             }
-            counter++;
-            parkOutPanel.addParkInTime(DateTime.Now.ToString());
-            parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
-            parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
-            parkOutPanel.addVehicleType(comboVehicleType.Text);
-            parkOutPanel.parkedInVehicles();
-
+            else
+            {
+                counter++;
+                parkOutPanel.addParkInTime(DateTime.Now.ToString());
+                parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
+                parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
+                parkOutPanel.addVehicleType(comboVehicleType.Text);
+                parkOutPanel.parkedInVehicles();
+            }
         }
         public int getCounter() { 
             return counter;
