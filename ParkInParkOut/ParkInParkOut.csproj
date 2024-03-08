@@ -71,6 +71,12 @@
     <Compile Include="Dashboard.Designer.cs">
       <DependentUpon>Dashboard.cs</DependentUpon>
     </Compile>
+    <Compile Include="ErrorDateTimeMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="ErrorDateTimeMessage.Designer.cs">
+      <DependentUpon>ErrorDateTimeMessage.cs</DependentUpon>
+    </Compile>
     <Compile Include="GradientPanel.cs">
       <SubType>Component</SubType>
     </Compile>
@@ -106,8 +112,17 @@
     <Compile Include="ParkOutResult.Designer.cs">
       <DependentUpon>ParkOutResult.cs</DependentUpon>
     </Compile>
+    <Compile Include="SuccessFulParkInMessage.cs">
+      <SubType>UserControl</SubType>
+    </Compile>
+    <Compile Include="SuccessFulParkInMessage.Designer.cs">
+      <DependentUpon>SuccessFulParkInMessage.cs</DependentUpon>
+    </Compile>
     <EmbeddedResource Include="Dashboard.resx">
       <DependentUpon>Dashboard.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="ErrorDateTimeMessage.resx">
+      <DependentUpon>ErrorDateTimeMessage.cs</DependentUpon>
     </EmbeddedResource>
     <EmbeddedResource Include="LoginForm.resx">
       <DependentUpon>LoginForm.cs</DependentUpon>
@@ -133,6 +148,9 @@
     </Compile>
     <EmbeddedResource Include="ParkOutResult.resx">
       <DependentUpon>ParkOutResult.cs</DependentUpon>
+    </EmbeddedResource>
+    <EmbeddedResource Include="SuccessFulParkInMessage.resx">
+      <DependentUpon>SuccessFulParkInMessage.cs</DependentUpon>
     </EmbeddedResource>
     <None Include="Properties\Settings.settings">
       <Generator>SettingsSingleFileGenerator</Generator>

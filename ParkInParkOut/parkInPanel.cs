@@ -17,6 +17,7 @@ namespace ParkInParkOut
         ParkOutPanel parkOutPanel;
         ParkOutResult parkOutResult;
         int counter = 0;
+        SuccessFulParkInMessage successFulParkInMessage;
         public ParkInPanel(ParkOutPanel parkOutPanel, ParkOutResult parkOutResult)
         {
             InitializeComponent();
@@ -85,13 +86,31 @@ namespace ParkInParkOut
             }
             else
             {
-                counter++;
-                parkOutPanel.addParkInTime(DateTime.Now.ToString());
-                parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
-                parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
-                parkOutPanel.addVehicleType(comboVehicleType.Text);
-                parkOutPanel.parkedInVehicles();
+                if (parkOutPanel.isDuplicatePlateNumber(plateNumberTextBox.Text))
+                {
+                    errorFillMessage.Text = "Error! Duplicate Plate Number!";
+                    errorFillMessage.Show();
+                }
+                else
+                {
+                    counter++;
+                    parkOutPanel.addParkInTime(DateTime.Now.ToString());
+                    parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
+                    parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
+                    parkOutPanel.addVehicleType(comboVehicleType.Text);
+                    parkOutPanel.parkedInVehicles();
+                    setDefault();
+                    successFulParkInMessage.Show();
+                    this.Hide();
+                }
             }
+        }
+        public void setDefault() 
+        {
+            plateNumberTextBox.Text = "Plate Number";
+            comboVehicleType.Text = "Vehicle Type";
+            comboVehicleBrand.Text = "Vehicle Brand";
+            comboVehicleBrand.Enabled = false;
         }
         public int getCounter() { 
             return counter;
@@ -103,6 +122,7 @@ namespace ParkInParkOut
         private void showIncorrectMessage(object sender, EventArgs e)
         {
             errorFillMessage.Hide();
+            errorFillMessage.Text = "Please fill in all the necessary fields.";
         }
 
         private void comboVehicleType_Leave(object sender, EventArgs e)
@@ -128,6 +148,10 @@ namespace ParkInParkOut
 
         }
 
+        public void SetSuccessfulMessage(SuccessFulParkInMessage successFulParkInMessage)
+        { 
+            this.successFulParkInMessage = successFulParkInMessage;
         }
-    }
 
+    }
+}

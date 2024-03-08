@@ -101,19 +101,27 @@ namespace ParkInParkOut
         {
             Button btn = sender as Button;
             index = (int) btn.Tag;
-            parkOutResult.setParkInTime(parkInTime[index]);
-            parkOutResult.setPlateNumber(plateNumber[index]);
-            parkOutResult.setVehicleType(vehicleType[index]);
-            parkOutResult.setVehicleBrand(vehicleBrand[index]);
-            parkOutResult.Show();
-            parkOutResult.setValues();
-            parkInPanel.setCounter();
-            this.Hide();
-            plateNumber.RemoveAt(index);
-            vehicleBrand.RemoveAt(index);
-            vehicleType.RemoveAt(index);
-            parkInTime.RemoveAt(index);
-            parkedInVehicles(); 
+            if (Convert.ToDateTime(parkInTime[index]) > DateTime.Now)
+            {
+
+            }
+            else
+            {
+                parkOutResult.setParkOutTime(DateTime.Now);
+                parkOutResult.setParkInTime(parkInTime[index]);
+                parkOutResult.setPlateNumber(plateNumber[index]);
+                parkOutResult.setVehicleType(vehicleType[index]);
+                parkOutResult.setVehicleBrand(vehicleBrand[index]);
+                parkOutResult.Show();
+                parkOutResult.setValues();
+                parkInPanel.setCounter();
+                this.Hide();
+                plateNumber.RemoveAt(index);
+                vehicleBrand.RemoveAt(index);
+                vehicleType.RemoveAt(index);
+                parkInTime.RemoveAt(index);
+                parkedInVehicles();
+            }
         }
         public void setParkInPanel(ParkInPanel parkInPanel) { 
             this.parkInPanel = parkInPanel;
@@ -139,5 +147,9 @@ namespace ParkInParkOut
             this.vehicleBrand.Add(vehicleBrand);
         }
 
+        public bool isDuplicatePlateNumber(String plateNumber) {
+            for (int i = 0; i < this.plateNumber.Count; i++) if (this.plateNumber[i] == plateNumber) return true;
+            return false;
+        }
     }
 }
