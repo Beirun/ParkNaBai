@@ -62,20 +62,20 @@ namespace ParkInParkOut
 
         private void submitButtons()
         {
-            submitButton.BackColor = Color.Blue;
+            submitButton.BackColor = Color.Purple;
             submitButton.ForeColor = Color.White;
             submitButton.Font = new Font("Tahoma", 10, FontStyle.Bold);
         }
         private void submitButton_MouseLeave(object sender, EventArgs e)
         {
-            submitButton.BackColor = Color.Blue;
+            submitButton.BackColor = Color.Purple;
             submitButton.ForeColor = Color.White;
 
         }
         private void submitButton_MouseEnter(object sender, EventArgs e)
         {
             submitButton.FlatAppearance.MouseOverBackColor = Color.White;
-            submitButton.ForeColor = Color.Navy;
+            submitButton.ForeColor = Color.Purple;
         }
 
         private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
