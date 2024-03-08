@@ -125,7 +125,7 @@ namespace ParkInParkOut
             }
         }
 
-        public string Text
+        public override string Text
         {
             get { return labelText.Text; }
             set { labelText.Text = value; }
