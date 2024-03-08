@@ -56,7 +56,7 @@
             this.flowLayoutPanel.BackColor = System.Drawing.Color.Transparent;
             this.flowLayoutPanel.Location = new System.Drawing.Point(30, 111);
             this.flowLayoutPanel.Name = "flowLayoutPanel";
-            this.flowLayoutPanel.Size = new System.Drawing.Size(925, 645);
+            this.flowLayoutPanel.Size = new System.Drawing.Size(925, 657);
             this.flowLayoutPanel.TabIndex = 16;
             // 
             // parkInTimLabel
@@ -111,7 +111,7 @@
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
-            this.BackColor = System.Drawing.Color.White;
+            this.BackColor = System.Drawing.Color.Transparent;
             this.Controls.Add(this.gradientPanel1);
             this.Name = "ParkOutPanel";
             this.Size = new System.Drawing.Size(1032, 799);

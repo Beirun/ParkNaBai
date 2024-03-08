@@ -27,6 +27,7 @@ namespace ParkInParkOut
         ParkInDash dash;
         ParkOutResult parkOutResult;
         ParkInPanel parkInPanel;
+       
 
         public ParkOutPanel()
         {
@@ -60,14 +61,14 @@ namespace ParkInParkOut
                 plateNumberLabels[i].Text = plateNumber[i];
                 vehicleTypeLabels[i].Text = vehicleType[i];
                 vehicleBrandLabels[i].Text = vehicleBrand[i];
-                parkOutButtons[i].Text = "Test";
+                parkOutButtons[i].Text = "Park Out";
 
 
                 vehicleTypeLabels[i].Size = new Size(130, 29);
                 vehicleBrandLabels[i].Size = new Size(140, 29);
                 parkinTimeLabels[i].Size = new Size(140, 29);
                 plateNumberLabels[i].Size = new Size(140, 29);
-                parkOutButtons[i].Size = new Size(100, 29);
+                parkOutButtons[i].Size = new Size(100, 25);
                 index = i;
                 parkOutButtons[i].MouseClick += ParkOutPanel_MouseClick;
 
@@ -76,18 +77,17 @@ namespace ParkInParkOut
                 vehicleTypeLabels[i].TextAlign = ContentAlignment.MiddleCenter;
                 vehicleBrandLabels[i].TextAlign = ContentAlignment.MiddleCenter;
 
+                parkOutButtons[i].ForeColor = Color.Navy;
+
                 parkoutSmallPanel[i] = new FlowLayoutPanel();
                 parkoutSmallPanel[i].FlowDirection = FlowDirection.LeftToRight;
-                parkoutSmallPanel[i].Size = new Size(1000, 32);
-                parkoutSmallPanel[i].BackColor = Color.AliceBlue;
-
-                parkinTimeLabels[i].BackColor = Color.Transparent;
-                plateNumberLabels[i].BackColor = Color.Transparent;
-                vehicleTypeLabels[i].BackColor = Color.Transparent;
-                vehicleBrandLabels[i].BackColor = Color.Transparent;
-                flowLayoutPanel.Controls.Add(parkoutSmallPanel[i]);
+                parkoutSmallPanel[i].Size = new Size(690 , 32);
+                parkoutSmallPanel[i].BorderStyle = BorderStyle.FixedSingle;
+                parkoutSmallPanel[i].ForeColor = Color.White;
+                parkoutSmallPanel[i].BackColor = Color.Transparent;
 
 
+               flowLayoutPanel.Controls.Add(parkoutSmallPanel[i]);
             }
 
             for (int i = 0; i < parkInTime.Count; i++)
@@ -98,9 +98,6 @@ namespace ParkInParkOut
                 parkoutSmallPanel[i].Controls.Add(vehicleBrandLabels[i]);
                 parkoutSmallPanel[i].Controls.Add(parkOutButtons[i]);
             }
-
-            
-
         }
 
         private void ParkOutPanel_MouseClick(object sender, EventArgs e)
@@ -143,5 +140,6 @@ namespace ParkInParkOut
         {
             this.vehicleBrand.Add(vehicleBrand);
         }
+
     }
 }
