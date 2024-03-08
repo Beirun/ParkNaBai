@@ -36,6 +36,7 @@
             this.parkInTimeResult = new System.Windows.Forms.Label();
             this.labelPlateNumberResult = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ParkInParkOut.GradientPanel();
+            this.backButton = new System.Windows.Forms.Button();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -126,6 +127,7 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BottomColor = System.Drawing.Color.Navy;
+            this.gradientPanel1.Controls.Add(this.backButton);
             this.gradientPanel1.Controls.Add(this.parkInTimeResult);
             this.gradientPanel1.Controls.Add(this.parkOutTimeResult);
             this.gradientPanel1.Controls.Add(this.vehicleTypeResult);
@@ -139,6 +141,16 @@
             this.gradientPanel1.Size = new System.Drawing.Size(1032, 799);
             this.gradientPanel1.TabIndex = 18;
             this.gradientPanel1.TopColor = System.Drawing.Color.Purple;
+            // 
+            // backButton
+            // 
+            this.backButton.Location = new System.Drawing.Point(428, 619);
+            this.backButton.Name = "backButton";
+            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.TabIndex = 18;
+            this.backButton.Text = "Back";
+            this.backButton.UseVisualStyleBackColor = true;
+            this.backButton.Click += new System.EventHandler(this.backButton_Click);
             // 
             // ParkOutResult
             // 
@@ -163,5 +175,6 @@
         private System.Windows.Forms.Label parkInTimeResult;
         private System.Windows.Forms.Label labelPlateNumberResult;
         private GradientPanel gradientPanel1;
+        private System.Windows.Forms.Button backButton;
     }
 }

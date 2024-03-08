@@ -10,6 +10,7 @@ namespace ParkInParkOut
     {
         
         ParkInPanel parkInPanel2;
+        
         public ParkInDash()
         {
             InitializeComponent();
@@ -21,6 +22,11 @@ namespace ParkInParkOut
             parkOutResult1.Hide();
             parkOutPanel1.Hide();
             noParkedInMessage1.Hide();
+            successFulParkInMessage1.Hide();
+            parkOutResult1.setDashboard(this);
+            errorDateTimeMessage1.setDash(this);
+            errorDateTimeMessage1.Hide();
+            parkOutPanel1.setErrorDatTimeMessage(errorDateTimeMessage1);
         }
 
         private void logoutButtons() { 
@@ -41,6 +47,8 @@ namespace ParkInParkOut
             this.Controls.Add(parkInPanel2);
             parkOutPanel1.setParkInPanel(parkInPanel2);
 
+            parkInPanel2.SetSuccessfulMessage(successFulParkInMessage1);
+            successFulParkInMessage1.setParkInPanel(parkInPanel2);
         }
         
         private void button2_Click(object sender, EventArgs e)
@@ -114,13 +122,16 @@ namespace ParkInParkOut
         {
             parkInButton.FlatAppearance.MouseOverBackColor = Color.Navy;
             parkInButton.ForeColor = Color.White;
+            
         }
 
 
-        private void parkOutButton_Click(object sender, EventArgs e)
+        public void parkOutButton_Click(object sender, EventArgs e)
         {
             parkInPanel2.Hide();
             parkOutResult1.Hide();
+            successFulParkInMessage1.Hide();
+            errorDateTimeMessage1.Hide();
             
             if (parkInPanel2.getCounter()==0)
             {
@@ -144,6 +155,8 @@ namespace ParkInParkOut
             parkOutResult1.Hide();
             parkOutPanel1.Hide();
             noParkedInMessage1.Hide();
+            successFulParkInMessage1.Hide();
+            errorDateTimeMessage1.Hide();
         }
 
         private void exitButton_Click(object sender, EventArgs e)

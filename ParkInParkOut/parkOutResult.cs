@@ -20,20 +20,12 @@ namespace ParkInParkOut
         String vehicleBrand;
         ParkOutPanel parkOutPanel;
         ParkInDash dash;
+   
         public ParkOutResult()
         {
             InitializeComponent();
         }
-        public ParkOutResult(ParkInDash dash, ParkOutPanel parkOutPanel)
-        {
-            this.dash = dash;
-            this.parkOutPanel = parkOutPanel;
-            InitializeComponent();
-            setValues();
-        }
-
         public void setValues() {
-            parkOutTime = DateTime.Now; 
             Calculator calculator = new Calculator();
             parkInTimeResult.Text = "Park In Time: " + parkInTime;
             parkOutTimeResult.Text = "Park Out Time: " + parkOutTime.ToString();
@@ -50,6 +42,9 @@ namespace ParkInParkOut
             parkingTimeResult.Text = "Parking Time: " + hours.ToString("F2") + " Hours";
 
         }
+        public void setParkOutTime(DateTime parkOutTime) { 
+            this.parkOutTime = parkOutTime;
+        }
         public void setPlateNumber(String plateNumber) { 
             this.plateNumber = plateNumber;
         }
@@ -61,6 +56,15 @@ namespace ParkInParkOut
         }
         public void setParkInTime(String parkInTime) { 
             this.parkInTime = Convert.ToDateTime(parkInTime);
+        }
+
+        public void setDashboard(ParkInDash dash)
+        {
+            this.dash = dash;
+        }
+        private void backButton_Click(object sender, EventArgs e)
+        {
+            dash.parkOutButton_Click(sender, e);
         }
     }
 }
