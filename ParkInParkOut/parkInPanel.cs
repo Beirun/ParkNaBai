@@ -104,7 +104,9 @@ namespace ParkInParkOut
 
         private void comboVehicleBrand_EnabledChanged(object sender, EventArgs e)
         {
-            comboVehicleBrand.BackColor = comboVehicleBrand.Enabled ? SystemColors.Window : Color.FromArgb(255, 255, 255);
+            comboVehicleBrand.BackColor = comboVehicleBrand.Enabled ? BackColor : Color.Blue;
+            comboVehicleBrand.ForeColor = Color.White;
+            comboVehicleBrand.BackColor = Color.Blue;
         }
 
         private void submitButton_Click(object sender, EventArgs e)
