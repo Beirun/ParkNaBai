@@ -15,6 +15,13 @@ namespace ParkInParkOut
         public NoParkedInMessage()
         {
             InitializeComponent();
+            noParkLabel();
+        }
+
+        public void noParkLabel() 
+        {
+            noPark.Parent = gradientPanel1;
+            noPark.BackColor = Color.Transparent;
         }
     }
 }

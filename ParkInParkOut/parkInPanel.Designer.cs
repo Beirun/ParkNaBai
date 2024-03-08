@@ -45,9 +45,9 @@
             this.gradientPanel1.Controls.Add(this.errorFillMessage);
             this.gradientPanel1.Controls.Add(this.plateNumberTextBox);
             this.gradientPanel1.Controls.Add(this.comboVehicleBrand);
-            this.gradientPanel1.Location = new System.Drawing.Point(12, 0);
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1017, 799);
+            this.gradientPanel1.Size = new System.Drawing.Size(1032, 800);
             this.gradientPanel1.TabIndex = 16;
             this.gradientPanel1.TopColor = System.Drawing.Color.Purple;
             // 
@@ -62,7 +62,7 @@
             "Sedan",
             "SUV",
             "Van"});
-            this.comboVehicleType.Location = new System.Drawing.Point(289, 348);
+            this.comboVehicleType.Location = new System.Drawing.Point(297, 348);
             this.comboVehicleType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboVehicleType.Name = "comboVehicleType";
             this.comboVehicleType.Size = new System.Drawing.Size(415, 37);
@@ -79,7 +79,7 @@
             this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.submitButton.Location = new System.Drawing.Point(418, 490);
+            this.submitButton.Location = new System.Drawing.Point(426, 490);
             this.submitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(171, 34);
@@ -94,7 +94,7 @@
             this.errorFillMessage.BackColor = System.Drawing.Color.Transparent;
             this.errorFillMessage.Font = new System.Drawing.Font("Britannic Bold", 10.8F);
             this.errorFillMessage.ForeColor = System.Drawing.Color.Red;
-            this.errorFillMessage.Location = new System.Drawing.Point(350, 219);
+            this.errorFillMessage.Location = new System.Drawing.Point(358, 219);
             this.errorFillMessage.Name = "errorFillMessage";
             this.errorFillMessage.Size = new System.Drawing.Size(303, 20);
             this.errorFillMessage.TabIndex = 15;
@@ -106,7 +106,7 @@
             this.plateNumberTextBox.BorderStyle = System.Windows.Forms.BorderStyle.None;
             this.plateNumberTextBox.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.plateNumberTextBox.ForeColor = System.Drawing.Color.DimGray;
-            this.plateNumberTextBox.Location = new System.Drawing.Point(289, 290);
+            this.plateNumberTextBox.Location = new System.Drawing.Point(297, 290);
             this.plateNumberTextBox.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.plateNumberTextBox.Multiline = true;
             this.plateNumberTextBox.Name = "plateNumberTextBox";
@@ -130,7 +130,7 @@
             "HONDA",
             "NMAX",
             "RUSI"});
-            this.comboVehicleBrand.Location = new System.Drawing.Point(289, 406);
+            this.comboVehicleBrand.Location = new System.Drawing.Point(297, 406);
             this.comboVehicleBrand.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.comboVehicleBrand.Name = "comboVehicleBrand";
             this.comboVehicleBrand.Size = new System.Drawing.Size(415, 37);

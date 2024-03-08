@@ -103,7 +103,6 @@ namespace ParkInParkOut
             {
                 textBox3.PasswordChar = '*';
                 textBox3.Font = new Font("Microsoft Sans Serif", 10, FontStyle.Bold);
-
             }
         }
 

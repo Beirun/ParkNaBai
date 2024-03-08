@@ -28,7 +28,6 @@ namespace ParkInParkOut
         ParkOutResult parkOutResult;
         ParkInPanel parkInPanel;
        
-
         public ParkOutPanel()
         {
             InitializeComponent();
@@ -63,7 +62,6 @@ namespace ParkInParkOut
                 vehicleBrandLabels[i].Text = vehicleBrand[i];
                 parkOutButtons[i].Text = "Park Out";
 
-
                 vehicleTypeLabels[i].Size = new Size(130, 29);
                 vehicleBrandLabels[i].Size = new Size(140, 29);
                 parkinTimeLabels[i].Size = new Size(140, 29);
@@ -85,7 +83,6 @@ namespace ParkInParkOut
                 parkoutSmallPanel[i].BorderStyle = BorderStyle.FixedSingle;
                 parkoutSmallPanel[i].ForeColor = Color.White;
                 parkoutSmallPanel[i].BackColor = Color.Transparent;
-
 
                flowLayoutPanel.Controls.Add(parkoutSmallPanel[i]);
             }
@@ -114,8 +111,7 @@ namespace ParkInParkOut
             vehicleBrand.RemoveAt(index);
             vehicleType.RemoveAt(index);
             parkInTime.RemoveAt(index);
-            parkedInVehicles();
-            
+            parkedInVehicles(); 
         }
         public void setParkInPanel(ParkInPanel parkInPanel) { 
             this.parkInPanel = parkInPanel;
