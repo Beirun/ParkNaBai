@@ -17,12 +17,8 @@ namespace ParkInParkOut
         ParkOutPanel parkOutPanel;
         ParkOutResult parkOutResult;
         int counter = 0;
-<<<<<<< HEAD
-      
 
-=======
         SuccessFulParkInMessage successFulParkInMessage;
->>>>>>> master
         public ParkInPanel(ParkOutPanel parkOutPanel, ParkOutResult parkOutResult)
         {
             InitializeComponent();
@@ -183,16 +179,11 @@ namespace ParkInParkOut
         {
 
         }
-<<<<<<< HEAD
-    }
-    }
-=======
 
         public void SetSuccessfulMessage(SuccessFulParkInMessage successFulParkInMessage)
         { 
             this.successFulParkInMessage = successFulParkInMessage;
         }
->>>>>>> master
 
     }
 }
