@@ -29,7 +29,7 @@
         private void InitializeComponent()
         {
             this.gradientPanel1 = new ParkInParkOut.GradientPanel();
-            this.comboVehicleType = new System.Windows.Forms.ComboBox();
+            this.comboVehicleType = new ParkInParkOut.comBox();
             this.submitButton = new System.Windows.Forms.Button();
             this.errorFillMessage = new System.Windows.Forms.Label();
             this.plateNumberTextBox = new System.Windows.Forms.TextBox();
@@ -53,22 +53,28 @@
             // 
             // comboVehicleType
             // 
-            this.comboVehicleType.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
-            this.comboVehicleType.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 13.8F);
-            this.comboVehicleType.ForeColor = System.Drawing.Color.DimGray;
-            this.comboVehicleType.FormattingEnabled = true;
+            this.comboVehicleType.BackColor = System.Drawing.Color.Navy;
+            this.comboVehicleType.BorderColor = System.Drawing.Color.Cyan;
+            this.comboVehicleType.BorderSize = 1;
+            this.comboVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comboVehicleType.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12.6F);
+            this.comboVehicleType.ForeColor = System.Drawing.Color.White;
+            this.comboVehicleType.IconColor = System.Drawing.Color.Fuchsia;
             this.comboVehicleType.Items.AddRange(new object[] {
             "MotorBike",
             "Sedan",
             "SUV",
             "Van"});
-            this.comboVehicleType.Location = new System.Drawing.Point(297, 348);
-            this.comboVehicleType.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
+            this.comboVehicleType.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(255)))), ((int)(((byte)(128)))), ((int)(((byte)(255)))));
+            this.comboVehicleType.ListForeColor = System.Drawing.Color.Navy;
+            this.comboVehicleType.Location = new System.Drawing.Point(297, 345);
+            this.comboVehicleType.MinimumSize = new System.Drawing.Size(200, 30);
             this.comboVehicleType.Name = "comboVehicleType";
-            this.comboVehicleType.Size = new System.Drawing.Size(415, 37);
-            this.comboVehicleType.TabIndex = 8;
-            this.comboVehicleType.Text = "Vehicle Type";
-            this.comboVehicleType.SelectedIndexChanged += new System.EventHandler(this.comboVehicleType_SelectedIndexChanged);
+            this.comboVehicleType.Padding = new System.Windows.Forms.Padding(1);
+            this.comboVehicleType.Size = new System.Drawing.Size(414, 37);
+            this.comboVehicleType.TabIndex = 16;
+            this.comboVehicleType.Texts = "Vehicle Type";
+            this.comboVehicleType.SelectedIndexChanged += new System.EventHandler(this.comboVehicleType_OnSelectedIndexChanged);
             this.comboVehicleType.Enter += new System.EventHandler(this.showIncorrectMessage);
             this.comboVehicleType.Leave += new System.EventHandler(this.comboVehicleType_Leave);
             // 
@@ -92,6 +98,7 @@
             // 
             this.errorFillMessage.AutoSize = true;
             this.errorFillMessage.BackColor = System.Drawing.Color.Transparent;
+            this.errorFillMessage.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.errorFillMessage.Font = new System.Drawing.Font("Britannic Bold", 10.8F);
             this.errorFillMessage.ForeColor = System.Drawing.Color.Red;
             this.errorFillMessage.Location = new System.Drawing.Point(358, 219);
@@ -159,9 +166,9 @@
         #endregion
         private System.Windows.Forms.ComboBox comboVehicleBrand;
         private System.Windows.Forms.Button submitButton;
-        private System.Windows.Forms.ComboBox comboVehicleType;
         private System.Windows.Forms.TextBox plateNumberTextBox;
         private System.Windows.Forms.Label errorFillMessage;
         private GradientPanel gradientPanel1;
+        private comBox comboVehicleType;
     }
 }

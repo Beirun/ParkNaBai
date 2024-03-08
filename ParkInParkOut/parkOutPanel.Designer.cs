@@ -45,9 +45,9 @@
             this.gradientPanel1.Controls.Add(this.vehicleTypeLabel);
             this.gradientPanel1.Controls.Add(this.vehicleBrandLabel);
             this.gradientPanel1.Controls.Add(this.labelPlateNumberLabel);
-            this.gradientPanel1.Location = new System.Drawing.Point(0, -8);
+            this.gradientPanel1.Location = new System.Drawing.Point(0, -6);
             this.gradientPanel1.Name = "gradientPanel1";
-            this.gradientPanel1.Size = new System.Drawing.Size(1032, 804);
+            this.gradientPanel1.Size = new System.Drawing.Size(1032, 820);
             this.gradientPanel1.TabIndex = 17;
             this.gradientPanel1.TopColor = System.Drawing.Color.Purple;
             // 

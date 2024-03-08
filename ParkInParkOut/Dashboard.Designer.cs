@@ -140,17 +140,17 @@ namespace ParkInParkOut
             // parkOutResult1
             // 
             this.parkOutResult1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkOutResult1.Location = new System.Drawing.Point(294, 0);
+            this.parkOutResult1.Location = new System.Drawing.Point(294, -1);
             this.parkOutResult1.Name = "parkOutResult1";
-            this.parkOutResult1.Size = new System.Drawing.Size(1031, 806);
+            this.parkOutResult1.Size = new System.Drawing.Size(1031, 807);
             this.parkOutResult1.TabIndex = 13;
             // 
             // parkOutPanel1
             // 
             this.parkOutPanel1.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.parkOutPanel1.Location = new System.Drawing.Point(292, 0);
+            this.parkOutPanel1.Location = new System.Drawing.Point(294, -1);
             this.parkOutPanel1.Name = "parkOutPanel1";
-            this.parkOutPanel1.Size = new System.Drawing.Size(1064, 806);
+            this.parkOutPanel1.Size = new System.Drawing.Size(1064, 850);
             this.parkOutPanel1.TabIndex = 11;
             // 
             // parkInPanel1

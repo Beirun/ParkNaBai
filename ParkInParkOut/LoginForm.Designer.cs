@@ -39,6 +39,8 @@
             this.textBox4 = new System.Windows.Forms.TextBox();
             this.panel1 = new System.Windows.Forms.Panel();
             this.gradientPanel1 = new ParkInParkOut.GradientPanel();
+            this.comBox2 = new ParkInParkOut.comBox();
+            this.comBox1 = new ParkInParkOut.comBox();
             this.label1 = new System.Windows.Forms.Label();
             this.pictureBox3 = new System.Windows.Forms.PictureBox();
             this.pictureBox2 = new System.Windows.Forms.PictureBox();
@@ -167,6 +169,8 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BottomColor = System.Drawing.Color.Purple;
+            this.gradientPanel1.Controls.Add(this.comBox2);
+            this.gradientPanel1.Controls.Add(this.comBox1);
             this.gradientPanel1.Controls.Add(this.label1);
             this.gradientPanel1.Controls.Add(this.pictureBox3);
             this.gradientPanel1.Controls.Add(this.pictureBox2);
@@ -179,6 +183,42 @@
             this.gradientPanel1.Size = new System.Drawing.Size(950, 800);
             this.gradientPanel1.TabIndex = 16;
             this.gradientPanel1.TopColor = System.Drawing.Color.Navy;
+            // 
+            // comBox2
+            // 
+            this.comBox2.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comBox2.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.comBox2.BorderSize = 1;
+            this.comBox2.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comBox2.ForeColor = System.Drawing.Color.Navy;
+            this.comBox2.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.comBox2.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.comBox2.ListForeColor = System.Drawing.Color.DimGray;
+            this.comBox2.Location = new System.Drawing.Point(-19, -19);
+            this.comBox2.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comBox2.Name = "comBox2";
+            this.comBox2.Padding = new System.Windows.Forms.Padding(1);
+            this.comBox2.Size = new System.Drawing.Size(200, 30);
+            this.comBox2.TabIndex = 13;
+            this.comBox2.Texts = "";
+            // 
+            // comBox1
+            // 
+            this.comBox1.BackColor = System.Drawing.Color.WhiteSmoke;
+            this.comBox1.BorderColor = System.Drawing.Color.MediumSlateBlue;
+            this.comBox1.BorderSize = 1;
+            this.comBox1.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
+            this.comBox1.ForeColor = System.Drawing.Color.Navy;
+            this.comBox1.IconColor = System.Drawing.Color.MediumSlateBlue;
+            this.comBox1.ListBackColor = System.Drawing.Color.FromArgb(((int)(((byte)(230)))), ((int)(((byte)(228)))), ((int)(((byte)(245)))));
+            this.comBox1.ListForeColor = System.Drawing.Color.DimGray;
+            this.comBox1.Location = new System.Drawing.Point(-19, -19);
+            this.comBox1.MinimumSize = new System.Drawing.Size(200, 30);
+            this.comBox1.Name = "comBox1";
+            this.comBox1.Padding = new System.Windows.Forms.Padding(1);
+            this.comBox1.Size = new System.Drawing.Size(200, 30);
+            this.comBox1.TabIndex = 12;
+            this.comBox1.Texts = "";
             // 
             // label1
             // 
@@ -287,6 +327,8 @@
         private System.Windows.Forms.Label incorrectUserOrPasswordMessage;
         private System.Windows.Forms.PictureBox pictureBox2;
         private System.Windows.Forms.PictureBox pictureBox3;
+        private comBox comBox1;
+        private comBox comBox2;
     }
 }
 
