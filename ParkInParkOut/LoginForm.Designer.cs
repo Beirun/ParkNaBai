@@ -200,7 +200,7 @@
             this.comBox2.Padding = new System.Windows.Forms.Padding(1);
             this.comBox2.Size = new System.Drawing.Size(200, 30);
             this.comBox2.TabIndex = 13;
-            this.comBox2.Texts = "";
+            this.comBox2.Text = "";
             // 
             // comBox1
             // 
@@ -218,7 +218,7 @@
             this.comBox1.Padding = new System.Windows.Forms.Padding(1);
             this.comBox1.Size = new System.Drawing.Size(200, 30);
             this.comBox1.TabIndex = 12;
-            this.comBox1.Texts = "";
+            this.comBox1.Text = "";
             // 
             // label1
             // 

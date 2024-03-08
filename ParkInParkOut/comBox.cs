@@ -125,7 +125,7 @@ namespace ParkInParkOut
             }
         }
 
-        public string Texts
+        public string Text
         {
             get { return labelText.Text; }
             set { labelText.Text = value; }
@@ -261,10 +261,11 @@ namespace ParkInParkOut
 
         private void ComboBox_SelectedIndexChanged(object sender, EventArgs e)
         {
+            labelText.Text = cmBoxList.Text;
+
             if (SelectedIndexChanged != null)
                 SelectedIndexChanged.Invoke(sender, e);
 
-            labelText.Text = cmBoxList.Text;
         }
 
         private void Icon_Paint(object sender, PaintEventArgs e)

@@ -67,7 +67,7 @@ namespace ParkInParkOut
                 parkinTimeLabels[i].Size = new Size(140, 29);
                 plateNumberLabels[i].Size = new Size(140, 29);
                 parkOutButtons[i].Size = new Size(100, 25);
-                index = i;
+                parkOutButtons[i].Tag = i;
                 parkOutButtons[i].MouseClick += ParkOutPanel_MouseClick;
 
                 parkinTimeLabels[i].TextAlign = ContentAlignment.MiddleCenter;
@@ -99,6 +99,8 @@ namespace ParkInParkOut
 
         private void ParkOutPanel_MouseClick(object sender, EventArgs e)
         {
+            Button btn = sender as Button;
+            index = (int) btn.Tag;
             parkOutResult.setParkInTime(parkInTime[index]);
             parkOutResult.setPlateNumber(plateNumber[index]);
             parkOutResult.setVehicleType(vehicleType[index]);

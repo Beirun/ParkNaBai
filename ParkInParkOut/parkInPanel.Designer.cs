@@ -73,7 +73,7 @@
             this.comboVehicleType.Padding = new System.Windows.Forms.Padding(1);
             this.comboVehicleType.Size = new System.Drawing.Size(414, 37);
             this.comboVehicleType.TabIndex = 16;
-            this.comboVehicleType.Texts = "Vehicle Type";
+            this.comboVehicleType.Text = "Vehicle Type";
             this.comboVehicleType.SelectedIndexChanged += new System.EventHandler(this.comboVehicleType_OnSelectedIndexChanged);
             this.comboVehicleType.Enter += new System.EventHandler(this.showIncorrectMessage);
             this.comboVehicleType.Leave += new System.EventHandler(this.comboVehicleType_Leave);
