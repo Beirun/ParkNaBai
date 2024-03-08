@@ -17,6 +17,8 @@ namespace ParkInParkOut
         ParkOutPanel parkOutPanel;
         ParkOutResult parkOutResult;
         int counter = 0;
+      
+
         public ParkInPanel(ParkOutPanel parkOutPanel, ParkOutResult parkOutResult)
         {
             InitializeComponent();
@@ -26,6 +28,13 @@ namespace ParkInParkOut
         public ParkInPanel()
         {
             InitializeComponent();
+            vtext();
+        }
+
+        private void vtext()
+        {
+            comboVehicleType.Text = "Vehicle Type";
+            comboVehicleBrand.Text = "Vehicle Brand";
         }
         private void plateNum_Enter(object sender, EventArgs e)
         {
@@ -33,7 +42,7 @@ namespace ParkInParkOut
             {
                 plateNumberTextBox.Text = "";
 
-                plateNumberTextBox.ForeColor = Color.FromArgb(50, 50, 50);
+                plateNumberTextBox.ForeColor = Color.White;
             }
             errorFillMessage.Hide();
         }
@@ -43,9 +52,11 @@ namespace ParkInParkOut
             {
                 plateNumberTextBox.Text = "Plate Number";
 
-                plateNumberTextBox.ForeColor = Color.DimGray;
+                plateNumberTextBox.ForeColor = Color.White;
             }
         }
+
+
         private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             string[,] vehicleBrands = {
@@ -65,8 +76,8 @@ namespace ParkInParkOut
 
         private void comboVehicleBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboVehicleBrand.Text != "Vehicle Brand") comboVehicleBrand.ForeColor = Color.FromArgb(50, 50, 50);
-            else comboVehicleBrand.ForeColor = Color.DimGray;
+            if (comboVehicleBrand.Text != "Vehicle Brand") comboVehicleBrand.ForeColor = Color.White;
+            else comboVehicleBrand.ForeColor = Color.White;
 
         }
 
@@ -119,7 +130,7 @@ namespace ParkInParkOut
             if (comboVehicleBrand.Text == "")
             {
                 comboVehicleBrand.Text = "Vehicle Brand";
-                comboVehicleBrand.ForeColor = Color.DimGray;
+                comboVehicleBrand.ForeColor = Color.White;
             }
         }
 
@@ -127,7 +138,6 @@ namespace ParkInParkOut
         {
 
         }
-
-        }
+    }
     }
 
