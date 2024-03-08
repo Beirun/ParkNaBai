@@ -35,14 +35,17 @@
             this.vehicleTypeResult = new System.Windows.Forms.Label();
             this.parkInTimeResult = new System.Windows.Forms.Label();
             this.labelPlateNumberResult = new System.Windows.Forms.Label();
+            this.gradientPanel1 = new ParkInParkOut.GradientPanel();
+            this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
             // parkOutTimeResult
             // 
             this.parkOutTimeResult.AutoSize = true;
+            this.parkOutTimeResult.BackColor = System.Drawing.Color.Transparent;
             this.parkOutTimeResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.parkOutTimeResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.parkOutTimeResult.Location = new System.Drawing.Point(271, 287);
+            this.parkOutTimeResult.Location = new System.Drawing.Point(292, 276);
             this.parkOutTimeResult.Name = "parkOutTimeResult";
             this.parkOutTimeResult.Size = new System.Drawing.Size(182, 29);
             this.parkOutTimeResult.TabIndex = 17;
@@ -54,7 +57,7 @@
             this.parkingTimeResult.BackColor = System.Drawing.Color.Transparent;
             this.parkingTimeResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.parkingTimeResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.parkingTimeResult.Location = new System.Drawing.Point(282, 462);
+            this.parkingTimeResult.Location = new System.Drawing.Point(303, 451);
             this.parkingTimeResult.Name = "parkingTimeResult";
             this.parkingTimeResult.Size = new System.Drawing.Size(171, 29);
             this.parkingTimeResult.TabIndex = 16;
@@ -66,7 +69,7 @@
             this.parkingFeeResult.BackColor = System.Drawing.Color.Transparent;
             this.parkingFeeResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.parkingFeeResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.parkingFeeResult.Location = new System.Drawing.Point(297, 505);
+            this.parkingFeeResult.Location = new System.Drawing.Point(318, 494);
             this.parkingFeeResult.Name = "parkingFeeResult";
             this.parkingFeeResult.Size = new System.Drawing.Size(156, 29);
             this.parkingFeeResult.TabIndex = 15;
@@ -75,9 +78,10 @@
             // vehicleBrandResult
             // 
             this.vehicleBrandResult.AutoSize = true;
+            this.vehicleBrandResult.BackColor = System.Drawing.Color.Transparent;
             this.vehicleBrandResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.vehicleBrandResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.vehicleBrandResult.Location = new System.Drawing.Point(274, 417);
+            this.vehicleBrandResult.Location = new System.Drawing.Point(295, 406);
             this.vehicleBrandResult.Name = "vehicleBrandResult";
             this.vehicleBrandResult.Size = new System.Drawing.Size(179, 29);
             this.vehicleBrandResult.TabIndex = 3;
@@ -86,9 +90,10 @@
             // vehicleTypeResult
             // 
             this.vehicleTypeResult.AutoSize = true;
+            this.vehicleTypeResult.BackColor = System.Drawing.Color.Transparent;
             this.vehicleTypeResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.vehicleTypeResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.vehicleTypeResult.Location = new System.Drawing.Point(289, 374);
+            this.vehicleTypeResult.Location = new System.Drawing.Point(310, 363);
             this.vehicleTypeResult.Name = "vehicleTypeResult";
             this.vehicleTypeResult.Size = new System.Drawing.Size(164, 29);
             this.vehicleTypeResult.TabIndex = 2;
@@ -97,9 +102,10 @@
             // parkInTimeResult
             // 
             this.parkInTimeResult.AutoSize = true;
+            this.parkInTimeResult.BackColor = System.Drawing.Color.Transparent;
             this.parkInTimeResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.parkInTimeResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.parkInTimeResult.Location = new System.Drawing.Point(290, 243);
+            this.parkInTimeResult.Location = new System.Drawing.Point(311, 232);
             this.parkInTimeResult.Name = "parkInTimeResult";
             this.parkInTimeResult.Size = new System.Drawing.Size(163, 29);
             this.parkInTimeResult.TabIndex = 1;
@@ -108,30 +114,43 @@
             // labelPlateNumberResult
             // 
             this.labelPlateNumberResult.AutoSize = true;
+            this.labelPlateNumberResult.BackColor = System.Drawing.Color.Transparent;
             this.labelPlateNumberResult.Font = new System.Drawing.Font("Arial", 14F, System.Drawing.FontStyle.Bold);
             this.labelPlateNumberResult.ForeColor = System.Drawing.SystemColors.Window;
-            this.labelPlateNumberResult.Location = new System.Drawing.Point(279, 330);
+            this.labelPlateNumberResult.Location = new System.Drawing.Point(300, 319);
             this.labelPlateNumberResult.Name = "labelPlateNumberResult";
             this.labelPlateNumberResult.Size = new System.Drawing.Size(174, 29);
             this.labelPlateNumberResult.TabIndex = 0;
             this.labelPlateNumberResult.Text = "Plate Number:";
+            // 
+            // gradientPanel1
+            // 
+            this.gradientPanel1.BottomColor = System.Drawing.Color.Navy;
+            this.gradientPanel1.Controls.Add(this.parkInTimeResult);
+            this.gradientPanel1.Controls.Add(this.parkOutTimeResult);
+            this.gradientPanel1.Controls.Add(this.vehicleTypeResult);
+            this.gradientPanel1.Controls.Add(this.parkingTimeResult);
+            this.gradientPanel1.Controls.Add(this.vehicleBrandResult);
+            this.gradientPanel1.Controls.Add(this.labelPlateNumberResult);
+            this.gradientPanel1.Controls.Add(this.parkingFeeResult);
+            this.gradientPanel1.Dock = System.Windows.Forms.DockStyle.Fill;
+            this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
+            this.gradientPanel1.Name = "gradientPanel1";
+            this.gradientPanel1.Size = new System.Drawing.Size(1032, 799);
+            this.gradientPanel1.TabIndex = 18;
+            this.gradientPanel1.TopColor = System.Drawing.Color.Purple;
             // 
             // ParkOutResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.SystemColors.WindowFrame;
-            this.Controls.Add(this.parkOutTimeResult);
-            this.Controls.Add(this.parkingTimeResult);
-            this.Controls.Add(this.parkInTimeResult);
-            this.Controls.Add(this.parkingFeeResult);
-            this.Controls.Add(this.labelPlateNumberResult);
-            this.Controls.Add(this.vehicleBrandResult);
-            this.Controls.Add(this.vehicleTypeResult);
+            this.Controls.Add(this.gradientPanel1);
             this.Name = "ParkOutResult";
             this.Size = new System.Drawing.Size(1032, 799);
+            this.gradientPanel1.ResumeLayout(false);
+            this.gradientPanel1.PerformLayout();
             this.ResumeLayout(false);
-            this.PerformLayout();
 
         }
 
@@ -143,5 +162,6 @@
         private System.Windows.Forms.Label vehicleTypeResult;
         private System.Windows.Forms.Label parkInTimeResult;
         private System.Windows.Forms.Label labelPlateNumberResult;
+        private GradientPanel gradientPanel1;
     }
 }

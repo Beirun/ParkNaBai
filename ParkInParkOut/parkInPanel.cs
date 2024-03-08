@@ -46,7 +46,7 @@ namespace ParkInParkOut
                 plateNumberTextBox.ForeColor = Color.DimGray;
             }
         }
-        private void comboVehicleType_SelectedIndexChanged(object sender, EventArgs e)
+        private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
             string[,] vehicleBrands = {
                 { "Yamaha", "Honda", "Kawasaki", "Suzuki", "Harley-Davidson" },
@@ -55,8 +55,8 @@ namespace ParkInParkOut
                 { "Mercedes-Benz", "Ford", "Chrysler", "Volkswagen", "Honda" }
             };
 
-            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.FromArgb(50, 50, 50);
-            else comboVehicleType.ForeColor = Color.DimGray;
+            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.White;
+            else comboVehicleType.ForeColor = Color.White;
 
             comboVehicleBrand.Enabled = true;
             comboVehicleBrand.Items.Clear();
@@ -110,7 +110,7 @@ namespace ParkInParkOut
             if (comboVehicleType.Text == "")
             {
                 comboVehicleType.Text = "Vehicle Type";
-                comboVehicleType.ForeColor = Color.DimGray;
+                comboVehicleType.ForeColor = Color.White;
             }
         }
 
@@ -122,5 +122,12 @@ namespace ParkInParkOut
                 comboVehicleBrand.ForeColor = Color.DimGray;
             }
         }
+
+        private void ParkInPanel_Load(object sender, EventArgs e)
+        {
+
+        }
+
+        }
     }
-}
+
