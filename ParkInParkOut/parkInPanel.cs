@@ -25,19 +25,21 @@ namespace ParkInParkOut
             this.parkOutResult = parkOutResult;
             this.parkOutPanel = parkOutPanel;
             vtext();
+            submitButtons();
         }
         public ParkInPanel()
         {
             InitializeComponent();
             vtext();
-        }
+            submitButtons();
+         }
 
         private void vtext()
         {
             comboVehicleType.Text = "Vehicle Type";
             comboVehicleBrand.Text = "Vehicle Brand";
-            plateNumberTextBox.Padding = new Padding(8, 0, 0, 0);
         }
+
         private void plateNum_Enter(object sender, EventArgs e)
         {
             if (plateNumberTextBox.Text == "Plate Number")
@@ -58,6 +60,23 @@ namespace ParkInParkOut
             }
         }
 
+        private void submitButtons()
+        {
+            submitButton.BackColor = Color.Blue;
+            submitButton.ForeColor = Color.White;
+            submitButton.Font = new Font("Tahoma", 10, FontStyle.Bold);
+        }
+        private void submitButton_MouseLeave(object sender, EventArgs e)
+        {
+            submitButton.BackColor = Color.Blue;
+            submitButton.ForeColor = Color.White;
+
+        }
+        private void submitButton_MouseEnter(object sender, EventArgs e)
+        {
+            submitButton.FlatAppearance.MouseOverBackColor = Color.White;
+            submitButton.ForeColor = Color.Navy;
+        }
 
         private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
@@ -135,6 +154,7 @@ namespace ParkInParkOut
                 comboVehicleBrand.ForeColor = Color.White;
             }
         }
+
 
         private void ParkInPanel_Load(object sender, EventArgs e)
         {
