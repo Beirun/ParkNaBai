@@ -42,6 +42,7 @@ namespace ParkInParkOut
             this.parkInPanel1 = new ParkInParkOut.ParkInPanel();
             this.noParkedInMessage1 = new ParkInParkOut.NoParkedInMessage();
             this.successFulParkInMessage1 = new ParkInParkOut.SuccessFulParkInMessage();
+            this.errorDateTimeMessage1 = new ParkInParkOut.ErrorDateTimeMessage();
             this.panelDash.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -178,6 +179,14 @@ namespace ParkInParkOut
             this.successFulParkInMessage1.Size = new System.Drawing.Size(1032, 800);
             this.successFulParkInMessage1.TabIndex = 15;
             // 
+            // errorDateTimeMessage1
+            // 
+            this.errorDateTimeMessage1.BackColor = System.Drawing.Color.DimGray;
+            this.errorDateTimeMessage1.Location = new System.Drawing.Point(293, 0);
+            this.errorDateTimeMessage1.Name = "errorDateTimeMessage1";
+            this.errorDateTimeMessage1.Size = new System.Drawing.Size(1032, 800);
+            this.errorDateTimeMessage1.TabIndex = 16;
+            // 
             // ParkInDash
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -191,6 +200,7 @@ namespace ParkInParkOut
             this.Controls.Add(this.parkInPanel1);
             this.Controls.Add(this.noParkedInMessage1);
             this.Controls.Add(this.successFulParkInMessage1);
+            this.Controls.Add(this.errorDateTimeMessage1);
             this.FormBorderStyle = System.Windows.Forms.FormBorderStyle.None;
             this.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.Name = "ParkInDash";
@@ -212,5 +222,6 @@ namespace ParkInParkOut
         private ParkOutPanel parkOutPanel1;
         private ParkOutResult parkOutResult1;
         private SuccessFulParkInMessage successFulParkInMessage1;
+        private ErrorDateTimeMessage errorDateTimeMessage1;
     }
 }

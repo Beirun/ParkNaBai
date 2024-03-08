@@ -27,6 +27,7 @@ namespace ParkInParkOut
         ParkInDash dash;
         ParkOutResult parkOutResult;
         ParkInPanel parkInPanel;
+        ErrorDateTimeMessage errorDateTimeMessage;
        
         public ParkOutPanel()
         {
@@ -103,7 +104,8 @@ namespace ParkInParkOut
             index = (int) btn.Tag;
             if (Convert.ToDateTime(parkInTime[index]) > DateTime.Now)
             {
-
+                errorDateTimeMessage.Show();
+                this.Hide();
             }
             else
             {
@@ -122,6 +124,10 @@ namespace ParkInParkOut
                 parkInTime.RemoveAt(index);
                 parkedInVehicles();
             }
+        }
+        public void setErrorDatTimeMessage(ErrorDateTimeMessage errorDateTimeMessage)
+        {
+            this.errorDateTimeMessage = errorDateTimeMessage;
         }
         public void setParkInPanel(ParkInPanel parkInPanel) { 
             this.parkInPanel = parkInPanel;

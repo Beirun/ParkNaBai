@@ -12,9 +12,19 @@ namespace ParkInParkOut
 {
     public partial class ErrorDateTimeMessage : UserControl
     {
+        ParkInDash dash;
         public ErrorDateTimeMessage()
         {
             InitializeComponent();
+        }
+
+        private void button1_Click(object sender, EventArgs e)
+        {
+            dash.parkOutButton_Click(sender, e);
+        }
+        public void setDash(ParkInDash dash)
+        {
+            this.dash = dash;
         }
     }
 }

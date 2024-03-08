@@ -10,6 +10,7 @@ namespace ParkInParkOut
     {
         
         ParkInPanel parkInPanel2;
+        
         public ParkInDash()
         {
             InitializeComponent();
@@ -23,6 +24,9 @@ namespace ParkInParkOut
             noParkedInMessage1.Hide();
             successFulParkInMessage1.Hide();
             parkOutResult1.setDashboard(this);
+            errorDateTimeMessage1.setDash(this);
+            errorDateTimeMessage1.Hide();
+            parkOutPanel1.setErrorDatTimeMessage(errorDateTimeMessage1);
         }
 
         private void logoutButtons() { 
@@ -127,6 +131,7 @@ namespace ParkInParkOut
             parkInPanel2.Hide();
             parkOutResult1.Hide();
             successFulParkInMessage1.Hide();
+            errorDateTimeMessage1.Hide();
             
             if (parkInPanel2.getCounter()==0)
             {
@@ -151,6 +156,7 @@ namespace ParkInParkOut
             parkOutPanel1.Hide();
             noParkedInMessage1.Hide();
             successFulParkInMessage1.Hide();
+            errorDateTimeMessage1.Hide();
         }
 
         private void exitButton_Click(object sender, EventArgs e)
