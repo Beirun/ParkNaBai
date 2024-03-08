@@ -106,13 +106,13 @@
             // 
             // submitButton
             // 
-            this.submitButton.BackColor = System.Drawing.Color.FromArgb(((int)(((byte)(192)))), ((int)(((byte)(0)))), ((int)(((byte)(192)))));
+            this.submitButton.BackColor = System.Drawing.Color.White;
             this.submitButton.FlatAppearance.BorderColor = System.Drawing.Color.White;
             this.submitButton.FlatAppearance.BorderSize = 2;
             this.submitButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.submitButton.Font = new System.Drawing.Font("Franklin Gothic Heavy", 13.8F, System.Drawing.FontStyle.Regular, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
             this.submitButton.ForeColor = System.Drawing.Color.FromArgb(((int)(((byte)(50)))), ((int)(((byte)(50)))), ((int)(((byte)(50)))));
-            this.submitButton.Location = new System.Drawing.Point(427, 479);
+            this.submitButton.Location = new System.Drawing.Point(424, 479);
             this.submitButton.Margin = new System.Windows.Forms.Padding(3, 2, 3, 2);
             this.submitButton.Name = "submitButton";
             this.submitButton.Size = new System.Drawing.Size(171, 43);
