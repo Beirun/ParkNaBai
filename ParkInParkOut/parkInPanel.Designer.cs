@@ -55,7 +55,7 @@
             // 
             this.comboVehicleBrand.BackColor = System.Drawing.Color.Blue;
             this.comboVehicleBrand.BorderColor = System.Drawing.Color.White;
-            this.comboVehicleBrand.BorderSize = 1;
+            this.comboVehicleBrand.BorderSize = 2;
             this.comboVehicleBrand.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.comboVehicleBrand.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12.6F);
             this.comboVehicleBrand.ForeColor = System.Drawing.Color.White;
@@ -70,7 +70,7 @@
             this.comboVehicleBrand.Location = new System.Drawing.Point(297, 408);
             this.comboVehicleBrand.MinimumSize = new System.Drawing.Size(200, 30);
             this.comboVehicleBrand.Name = "comboVehicleBrand";
-            this.comboVehicleBrand.Padding = new System.Windows.Forms.Padding(1);
+            this.comboVehicleBrand.Padding = new System.Windows.Forms.Padding(2);
             this.comboVehicleBrand.Size = new System.Drawing.Size(414, 37);
             this.comboVehicleBrand.TabIndex = 17;
             this.comboVehicleBrand.SelectedIndexChanged += new System.EventHandler(this.comboVehicleBrand_SelectedIndexChanged);
@@ -82,7 +82,7 @@
             // 
             this.comboVehicleType.BackColor = System.Drawing.Color.Blue;
             this.comboVehicleType.BorderColor = System.Drawing.Color.White;
-            this.comboVehicleType.BorderSize = 1;
+            this.comboVehicleType.BorderSize = 2;
             this.comboVehicleType.DropDownStyle = System.Windows.Forms.ComboBoxStyle.DropDown;
             this.comboVehicleType.Font = new System.Drawing.Font("Franklin Gothic Medium Cond", 12.6F);
             this.comboVehicleType.ForeColor = System.Drawing.Color.White;
@@ -97,7 +97,7 @@
             this.comboVehicleType.Location = new System.Drawing.Point(297, 345);
             this.comboVehicleType.MinimumSize = new System.Drawing.Size(200, 30);
             this.comboVehicleType.Name = "comboVehicleType";
-            this.comboVehicleType.Padding = new System.Windows.Forms.Padding(1);
+            this.comboVehicleType.Padding = new System.Windows.Forms.Padding(2);
             this.comboVehicleType.Size = new System.Drawing.Size(414, 37);
             this.comboVehicleType.TabIndex = 16;
             this.comboVehicleType.SelectedIndexChanged += new System.EventHandler(this.comboVehicleType_OnSelectedIndexChanged);

@@ -35,6 +35,7 @@ namespace ParkInParkOut
         {
             comboVehicleType.Text = "Vehicle Type";
             comboVehicleBrand.Text = "Vehicle Brand";
+            plateNumberTextBox.Padding = new Padding(8, 0, 0, 0);
         }
         private void plateNum_Enter(object sender, EventArgs e)
         {
