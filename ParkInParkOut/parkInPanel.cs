@@ -24,6 +24,7 @@ namespace ParkInParkOut
             InitializeComponent();
             this.parkOutResult = parkOutResult;
             this.parkOutPanel = parkOutPanel;
+            vtext();
         }
         public ParkInPanel()
         {
