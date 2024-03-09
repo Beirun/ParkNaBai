@@ -13,6 +13,7 @@ namespace ParkInParkOut
     class comBox : UserControl
     {
         private Color backColor = Color.WhiteSmoke;
+        private Color foreColor = Color.White;
         private Color iconColor = Color.MediumSlateBlue;
         private Color listBackColor = Color.FromArgb(230, 228, 245);
         private Color listForeColor = Color.White;
@@ -110,6 +111,18 @@ namespace ParkInParkOut
             {
                 base.ForeColor = value;
                 labelText.ForeColor = value;
+            }
+        }
+
+        public bool Enabled
+        { 
+            get
+            {
+                return buttonIcon.Enabled;
+            }
+            set 
+            {
+                buttonIcon.Enabled = value;
             }
         }
 
@@ -216,8 +229,9 @@ namespace ParkInParkOut
              buttonIcon = new Button();
 
             cmBoxList.BackColor = listBackColor;
-            cmBoxList.ForeColor = listForeColor;
+            cmBoxList.ForeColor = foreColor;
             cmBoxList.Font = new Font("Arial", 10, FontStyle.Regular);
+            
             cmBoxList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged); // Default Event
             cmBoxList.TextChanged += new EventHandler(ComboBox_TextChanged); // Refresh Text 
 
