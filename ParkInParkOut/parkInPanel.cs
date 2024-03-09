@@ -38,7 +38,7 @@ namespace ParkInParkOut
         {
             comboVehicleType.Text = "Vehicle Type";
             comboVehicleBrand.Text = "Vehicle Brand";
-            comboVehicleBrand.ForeColor = Color.White;            
+            
         }
 
         private void plateNum_Enter(object sender, EventArgs e)
@@ -108,10 +108,10 @@ namespace ParkInParkOut
         {
             
             comboVehicleBrand.BackColor = comboVehicleBrand.Enabled ? BackColor : Color.Blue;
-            comboVehicleBrand.ForeColor = Color.White;
+            comboVehicleBrand.ForeColor = comboVehicleBrand.Enabled ? Color.White : Color.Red;
             comboVehicleBrand.BackColor = Color.Blue;
         }
-
+         
         private void submitButton_Click(object sender, EventArgs e)
         {
             if (plateNumberTextBox.Text.Equals("Plate Number") || plateNumberTextBox.Text.Equals("") ||
@@ -190,6 +190,5 @@ namespace ParkInParkOut
             this.successFulParkInMessage = successFulParkInMessage;
         }
 
- 
     }
 }
