@@ -32,12 +32,13 @@ namespace ParkInParkOut
             InitializeComponent();
             vtext();
             submitButtons();
-         }
+        }
 
         private void vtext()
         {
             comboVehicleType.Text = "Vehicle Type";
             comboVehicleBrand.Text = "Vehicle Brand";
+            comboVehicleBrand.ForeColor = Color.White;            
         }
 
         private void plateNum_Enter(object sender, EventArgs e)
@@ -80,6 +81,7 @@ namespace ParkInParkOut
 
         private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
         {
+         
             string[,] vehicleBrands = {
                 { "Yamaha", "Honda", "Kawasaki", "Suzuki", "Harley-Davidson" },
                 { "Toyota", "Honda", "Ford", "Chevrolet", "Volkswagen" },
@@ -87,8 +89,8 @@ namespace ParkInParkOut
                 { "Mercedes-Benz", "Ford", "Chrysler", "Volkswagen", "Honda" }
             };
 
-            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.White;
-            else comboVehicleType.ForeColor = Color.White;
+            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.White; 
+            else comboVehicleType.ForeColor = Color.White; 
 
             comboVehicleBrand.Enabled = true;
             comboVehicleBrand.Items.Clear();
@@ -101,9 +103,10 @@ namespace ParkInParkOut
             else comboVehicleBrand.ForeColor = Color.White;
 
         }
-
+        
         private void comboVehicleBrand_EnabledChanged(object sender, EventArgs e)
         {
+            
             comboVehicleBrand.BackColor = comboVehicleBrand.Enabled ? BackColor : Color.Blue;
             comboVehicleBrand.ForeColor = Color.White;
             comboVehicleBrand.BackColor = Color.Blue;
@@ -179,7 +182,7 @@ namespace ParkInParkOut
 
         private void ParkInPanel_Load(object sender, EventArgs e)
         {
-
+           // comboVehicleBrand.ForeColor= Color.White;
         }
 
         public void SetSuccessfulMessage(SuccessFulParkInMessage successFulParkInMessage)
@@ -187,5 +190,6 @@ namespace ParkInParkOut
             this.successFulParkInMessage = successFulParkInMessage;
         }
 
+ 
     }
 }

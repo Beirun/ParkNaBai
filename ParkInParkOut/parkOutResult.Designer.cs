@@ -144,13 +144,14 @@
             // 
             // backButton
             // 
-            this.backButton.Location = new System.Drawing.Point(428, 619);
+            this.backButton.Location = new System.Drawing.Point(393, 579);
             this.backButton.Name = "backButton";
-            this.backButton.Size = new System.Drawing.Size(75, 23);
+            this.backButton.Size = new System.Drawing.Size(198, 48);
             this.backButton.TabIndex = 18;
             this.backButton.Text = "Back";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
+            this.backButton.MouseEnter += new System.EventHandler(this.backButton);
             // 
             // ParkOutResult
             // 

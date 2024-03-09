@@ -45,6 +45,7 @@
             this.gradientPanel1.Controls.Add(this.submitButton);
             this.gradientPanel1.Controls.Add(this.errorFillMessage);
             this.gradientPanel1.Controls.Add(this.plateNumberTextBox);
+            this.gradientPanel1.ForeColor = System.Drawing.Color.White;
             this.gradientPanel1.Location = new System.Drawing.Point(0, 0);
             this.gradientPanel1.Name = "gradientPanel1";
             this.gradientPanel1.Size = new System.Drawing.Size(1032, 800);
@@ -160,6 +161,7 @@
             this.AutoScaleMode = System.Windows.Forms.AutoScaleMode.Font;
             this.BackColor = System.Drawing.Color.White;
             this.Controls.Add(this.gradientPanel1);
+            this.ForeColor = System.Drawing.Color.White;
             this.Name = "ParkInPanel";
             this.Size = new System.Drawing.Size(1032, 799);
             this.Load += new System.EventHandler(this.ParkInPanel_Load);
