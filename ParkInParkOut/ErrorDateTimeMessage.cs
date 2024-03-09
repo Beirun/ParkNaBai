@@ -20,9 +20,10 @@ namespace ParkInParkOut
         }
         private void Button1()
         {
-            button1.BackColor = Color.Blue;
+            button1.BackColor = Color.White;
             button1.FlatAppearance.BorderSize = 0;
-            button1.ForeColor = Color.White;
+            button1.ForeColor = Color.Blue;
+            button1.Font = new Font("Tahoma", 10, FontStyle.Bold);
         }
         private void button1_Click(object sender, EventArgs e)
         {
@@ -34,14 +35,13 @@ namespace ParkInParkOut
         }
         private void ErrorDateTime_MouseLeave(object sender, EventArgs e)
         {
-            button1.BackColor = Color.Blue;
-            button1.ForeColor = Color.White;
-
+            button1.BackColor = Color.White;
+            button1.ForeColor = Color.Blue;
         }
         private void ErrorDateTime_MouseEnter(object sender, EventArgs e)
         {
-            button1.FlatAppearance.MouseOverBackColor = Color.White;
-            button1.ForeColor = Color.Blue;
+            button1.FlatAppearance.MouseOverBackColor = Color.Blue;
+            button1.ForeColor = Color.White;
         }
         private void ErrorDateTime_Load(object sender, EventArgs e)
         {
