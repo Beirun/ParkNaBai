@@ -144,14 +144,17 @@
             // 
             // backButton
             // 
+            this.backButton.FlatAppearance.BorderSize = 0;
+            this.backButton.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
             this.backButton.Location = new System.Drawing.Point(393, 579);
             this.backButton.Name = "backButton";
             this.backButton.Size = new System.Drawing.Size(198, 48);
             this.backButton.TabIndex = 18;
-            this.backButton.Text = "Back";
+            this.backButton.Text = "BACK";
             this.backButton.UseVisualStyleBackColor = true;
             this.backButton.Click += new System.EventHandler(this.backButton_Click);
-            this.backButton.MouseEnter += new System.EventHandler(this.backButton);
+            this.backButton.MouseEnter += new System.EventHandler(this.backButton_MouseEnter);
+            this.backButton.MouseLeave += new System.EventHandler(this.backButton_MouseLeave);
             // 
             // ParkOutResult
             // 

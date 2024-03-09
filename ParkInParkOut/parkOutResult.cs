@@ -24,6 +24,7 @@ namespace ParkInParkOut
         public ParkOutResult()
         {
             InitializeComponent();
+            BackButton();
         }
         public void setValues() {
             Calculator calculator = new Calculator();
@@ -69,20 +70,21 @@ namespace ParkInParkOut
 
         private void BackButton()
         {
-            backButton.BackColor = Color.Blue;
-            backButton.ForeColor = Color.White;
+            backButton.BackColor = Color.White;
+            backButton.ForeColor = Color.Blue;
             backButton.Font = new Font("Tahoma", 10, FontStyle.Bold);
+
         }
         private void backButton_MouseLeave(object sender, EventArgs e)
         {
-            backButton.BackColor = Color.Blue;
-            backButton.ForeColor = Color.White;
+            backButton.BackColor = Color.White;
+            backButton.ForeColor = Color.Blue;
     }
 
         private void backButton_MouseEnter(object sender, EventArgs e)
         {
-            backButton.FlatAppearance.MouseOverBackColor = Color.White;
-            backButton.ForeColor = Color.Blue;
+            backButton.FlatAppearance.MouseOverBackColor = Color.Blue;
+            backButton.ForeColor = Color.White;
         }
     }
 }
