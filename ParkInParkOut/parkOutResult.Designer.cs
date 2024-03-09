@@ -37,6 +37,7 @@
             this.labelPlateNumberResult = new System.Windows.Forms.Label();
             this.gradientPanel1 = new ParkInParkOut.GradientPanel();
             this.backButton = new System.Windows.Forms.Button();
+            this.receipt = new System.Windows.Forms.Label();
             this.gradientPanel1.SuspendLayout();
             this.SuspendLayout();
             // 
@@ -127,6 +128,7 @@
             // gradientPanel1
             // 
             this.gradientPanel1.BottomColor = System.Drawing.Color.Navy;
+            this.gradientPanel1.Controls.Add(this.receipt);
             this.gradientPanel1.Controls.Add(this.backButton);
             this.gradientPanel1.Controls.Add(this.parkInTimeResult);
             this.gradientPanel1.Controls.Add(this.parkOutTimeResult);
@@ -156,6 +158,19 @@
             this.backButton.MouseEnter += new System.EventHandler(this.backButton_MouseEnter);
             this.backButton.MouseLeave += new System.EventHandler(this.backButton_MouseLeave);
             // 
+            // receipt
+            // 
+            this.receipt.AutoSize = true;
+            this.receipt.BackColor = System.Drawing.Color.Transparent;
+            this.receipt.FlatStyle = System.Windows.Forms.FlatStyle.Flat;
+            this.receipt.Font = new System.Drawing.Font("Tahoma", 19.8F, System.Drawing.FontStyle.Bold, System.Drawing.GraphicsUnit.Point, ((byte)(0)));
+            this.receipt.ForeColor = System.Drawing.Color.White;
+            this.receipt.Location = new System.Drawing.Point(342, 136);
+            this.receipt.Name = "receipt";
+            this.receipt.Size = new System.Drawing.Size(353, 41);
+            this.receipt.TabIndex = 19;
+            this.receipt.Text = "PARK OUT RECEIPT";
+            // 
             // ParkOutResult
             // 
             this.AutoScaleDimensions = new System.Drawing.SizeF(8F, 16F);
@@ -180,5 +195,6 @@
         private System.Windows.Forms.Label labelPlateNumberResult;
         private GradientPanel gradientPanel1;
         private System.Windows.Forms.Button backButton;
+        private System.Windows.Forms.Label receipt;
     }
 }
