@@ -13,6 +13,7 @@ namespace ParkInParkOut
     public partial class SuccessFulParkInMessage : UserControl
     {
         ParkInPanel parkInPanel;
+        public ParkInDash d {  get; set; }
 
         public SuccessFulParkInMessage()
         {
@@ -22,15 +23,15 @@ namespace ParkInParkOut
 
         private void parkAgain()
         {
-            parkInAgain.BackColor = Color.Blue;
+            parkInAgain.BackColor = Color.ForestGreen;
             parkInAgain.FlatAppearance.BorderSize = 0;
-            parkInAgain.ForeColor = Color.White;
-            label1.ForeColor = Color.White;
+            parkInAgain.ForeColor = Color.FromArgb(230,230,230);
+            label1.ForeColor = Color.ForestGreen;
         }
         private void parkInAgain_Click(object sender, EventArgs e)
         {
             this.Hide();
-            parkInPanel.Show();
+            d.parkInButton_Click(sender, e);
           
         }
         public void setParkInPanel(ParkInPanel parkInPanel) 
@@ -40,21 +41,26 @@ namespace ParkInParkOut
         }
         private void parkInAgain_MouseLeave(object sender, EventArgs e)
         {
-            parkInAgain.BackColor = Color.Blue;
-            parkInAgain.ForeColor = Color.White;
+            parkInAgain.BackColor = Color.ForestGreen;
+            parkInAgain.ForeColor = Color.FromArgb(230, 230, 230);
 
         }
         private void parkInAgain_MouseEnter(object sender, EventArgs e)
         {
-            parkInAgain.FlatAppearance.MouseOverBackColor = Color.White;
-            parkInAgain.ForeColor = Color.Blue;
+            parkInAgain.FlatAppearance.MouseOverBackColor = Color.FromArgb(42, 171, 42);
+            parkInAgain.ForeColor = Color.White;
+        }
+        
+        private void SuccessFulParkInMessage_Load(object sender, EventArgs e)
+        {
+
         }
 
-        private void SuccessFull_Load(object sender, EventArgs e)
+        /*private void SuccessFull_Load(object sender, EventArgs e)
         {
             label1.Parent = gradientPanel1;
             label1.BackColor = Color.Transparent;
-        }
+        }*/
 
     }
 }

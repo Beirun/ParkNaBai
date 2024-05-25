@@ -83,6 +83,16 @@ namespace ParkInParkOut.Properties {
         /// <summary>
         ///   Looks up a localized resource of type System.Drawing.Bitmap.
         /// </summary>
+        internal static System.Drawing.Bitmap parknabaireceipt {
+            get {
+                object obj = ResourceManager.GetObject("parknabaireceipt", resourceCulture);
+                return ((System.Drawing.Bitmap)(obj));
+            }
+        }
+        
+        /// <summary>
+        ///   Looks up a localized resource of type System.Drawing.Bitmap.
+        /// </summary>
         internal static System.Drawing.Bitmap passwordIcon {
             get {
                 object obj = ResourceManager.GetObject("passwordIcon", resourceCulture);

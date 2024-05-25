@@ -20,8 +20,12 @@ namespace ParkInParkOut
 
         public void noParkLabel() 
         {
-            noPark.Parent = gradientPanel1;
             noPark.BackColor = Color.Transparent;
+        }
+
+        private void NoParkedInMessage_Load(object sender, EventArgs e)
+        {
+            noPark.Location = new Point(Width/2 - noPark.Width/2, Height/2 - noPark.Height/2);
         }
     }
 }

@@ -43,15 +43,6 @@ namespace ParkInParkOut
             button1.FlatAppearance.MouseOverBackColor = Color.Blue;
             button1.ForeColor = Color.White;
         }
-        private void ErrorDateTime_Load(object sender, EventArgs e)
-        {
-            label1.Parent = gradientPanel1;
-            label1.BackColor = Color.Transparent;
-            label1.ForeColor = Color.Red;
 
-            label2.Parent = gradientPanel1;
-            label2.BackColor = Color.Transparent;
-            label2 .ForeColor = Color.Red;
-        }
     }
 }

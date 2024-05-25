@@ -231,10 +231,10 @@ namespace ParkInParkOut
             cmBoxList.BackColor = listBackColor;
             cmBoxList.ForeColor = foreColor;
             cmBoxList.Font = new Font("Arial", 10, FontStyle.Regular);
-            
+            cmBoxList.Location = new Point(cmBoxList.Location.X+3, cmBoxList.Location.Y+12);
             cmBoxList.SelectedIndexChanged += new EventHandler(ComboBox_SelectedIndexChanged); // Default Event
             cmBoxList.TextChanged += new EventHandler(ComboBox_TextChanged); // Refresh Text 
-
+            cmBoxList.Size  = new Size(cmBoxList.Size.Width+50, cmBoxList.Size.Height);
             buttonIcon.Dock = DockStyle.Right;
             buttonIcon.FlatStyle = FlatStyle.Flat;
             buttonIcon.FlatAppearance.BorderSize = 0;
@@ -250,10 +250,10 @@ namespace ParkInParkOut
             labelText.FlatStyle = FlatStyle.Flat;
             labelText.Padding = new Padding(8, 2, 0, 0);
             labelText.Font = new Font(this.Font.Name, 10F);
+            this.Click += Icon_Click;
             labelText.Click += new EventHandler(Surface_Click);
             labelText.Enter += new EventHandler(Surface_Enter);
             labelText.Leave += new EventHandler(Surface_Leave);
-
 
             this.Controls.Add(labelText);
             this.Controls.Add(buttonIcon);
@@ -266,6 +266,7 @@ namespace ParkInParkOut
             this.ResumeLayout();
             AdjustComboBoxDimensions();
         }
+        
         private void AdjustComboBoxDimensions()
         {
             cmBoxList.Width = labelText.Width;
@@ -301,14 +302,15 @@ namespace ParkInParkOut
             }
         }
 
-        private void Icon_Click(object sender, EventArgs e)
+        public void Icon_Click(object sender, EventArgs e)
         {
+            if (!buttonIcon.Enabled) return;
             //Open Dropdown List
             cmBoxList.Select();
             cmBoxList.DroppedDown = true;
         }
 
-        private void Surface_Click(object sender, EventArgs e)
+        public void Surface_Click(object sender, EventArgs e)
         {
             this. OnClick(e);
             //Select Combo Box

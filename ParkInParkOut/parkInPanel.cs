@@ -9,6 +9,7 @@ using System.Runtime.InteropServices.ComTypes;
 using System.Text;
 using System.Threading.Tasks;
 using System.Windows.Forms;
+using System.Data.SqlClient;
 
 namespace ParkInParkOut
 {
@@ -16,9 +17,13 @@ namespace ParkInParkOut
     {
         ParkOutPanel parkOutPanel;
         ParkOutResult parkOutResult;
-        int counter = 0;
-
+        int counter;
+        public string userName { get; set; }
+        public int FloorSlot { get; set; }
+        public int RowSlot { get; set; }
+        public int ColumnSlot { get; set; }
         SuccessFulParkInMessage successFulParkInMessage;
+        SqlConnectionClass sqlConnectionClass = new SqlConnectionClass();
         public ParkInPanel(ParkOutPanel parkOutPanel, ParkOutResult parkOutResult)
         {
             InitializeComponent();
@@ -26,12 +31,14 @@ namespace ParkInParkOut
             this.parkOutPanel = parkOutPanel;
             vtext();
             submitButtons();
+            counter = sqlConnectionClass.getList();
         }
         public ParkInPanel()
         {
             InitializeComponent();
             vtext();
             submitButtons();
+            counter = sqlConnectionClass.getList();
         }
 
         private void vtext()
@@ -47,7 +54,7 @@ namespace ParkInParkOut
             {
                 plateNumberTextBox.Text = "";
 
-                plateNumberTextBox.ForeColor = Color.White;
+                plateNumberTextBox.ForeColor = Color.ForestGreen;
             }
             errorFillMessage.Hide();
         }
@@ -57,26 +64,29 @@ namespace ParkInParkOut
             {
                 plateNumberTextBox.Text = "Plate Number";
 
-                plateNumberTextBox.ForeColor = Color.White;
+                plateNumberTextBox.ForeColor = Color.ForestGreen;
             }
         }
 
         private void submitButtons()
         {
-            submitButton.BackColor = Color.Purple;
-            submitButton.ForeColor = Color.White;
+            submitButton.BackColor = Color.ForestGreen;
+            submitButton.ForeColor = Color.FromArgb(230,230,230);
             submitButton.Font = new Font("Tahoma", 10, FontStyle.Bold);
         }
-        private void submitButton_MouseLeave(object sender, EventArgs e)
+       
+
+        private void submitButton_MouseEnter(object sender, EventArgs e)
         {
-            submitButton.BackColor = Color.Purple;
+            submitButton.FlatAppearance.MouseOverBackColor = Color.FromArgb(42, 171, 42);
             submitButton.ForeColor = Color.White;
 
         }
-        private void submitButton_MouseEnter(object sender, EventArgs e)
+
+        private void submitButton_MouseLeave(object sender, EventArgs e)
         {
-            submitButton.FlatAppearance.MouseOverBackColor = Color.White;
-            submitButton.ForeColor = Color.Purple;
+            submitButton.BackColor = Color.ForestGreen;
+            submitButton.ForeColor = Color.FromArgb(230, 230, 230);
         }
 
         private void comboVehicleType_OnSelectedIndexChanged(object sender, EventArgs e)
@@ -89,8 +99,8 @@ namespace ParkInParkOut
                 { "Mercedes-Benz", "Ford", "Chrysler", "Volkswagen", "Honda" }
             };
 
-            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.White; 
-            else comboVehicleType.ForeColor = Color.White; 
+            if (comboVehicleType.Text != "Vehicle Type") comboVehicleType.ForeColor = Color.ForestGreen; 
+            else comboVehicleType.ForeColor = Color.ForestGreen; 
 
             comboVehicleBrand.Enabled = true;
             comboVehicleBrand.Items.Clear();
@@ -99,8 +109,8 @@ namespace ParkInParkOut
 
         private void comboVehicleBrand_SelectedIndexChanged(object sender, EventArgs e)
         {
-            if (comboVehicleBrand.Text != "Vehicle Brand") comboVehicleBrand.ForeColor = Color.White;
-            else comboVehicleBrand.ForeColor = Color.White;
+            if (comboVehicleBrand.Text != "Vehicle Brand") comboVehicleBrand.ForeColor = Color.ForestGreen;
+            else comboVehicleBrand.ForeColor = Color.ForestGreen;
 
         }
         
@@ -108,8 +118,8 @@ namespace ParkInParkOut
         {
             
             comboVehicleBrand.BackColor = comboVehicleBrand.Enabled ? BackColor : Color.Blue;
-            comboVehicleBrand.ForeColor = comboVehicleBrand.Enabled ? Color.White : Color.Red;
-            comboVehicleBrand.BackColor = Color.Blue;
+            comboVehicleBrand.ForeColor = comboVehicleBrand.Enabled ? Color.ForestGreen : Color.Red;
+            comboVehicleBrand.BackColor = Color.White;
         }
          
         private void submitButton_Click(object sender, EventArgs e)
@@ -122,23 +132,68 @@ namespace ParkInParkOut
             }
             else
             {
-                if (parkOutPanel.isDuplicatePlateNumber(plateNumberTextBox.Text))
+
+
+
+                if (sqlConnectionClass.isVehicleInDB(plateNumberTextBox.Text, comboVehicleType.Text, comboVehicleBrand.Text))
+                {
+                    if (!sqlConnectionClass.isVehicleActive(plateNumberTextBox.Text))
+                    {
+                        sqlConnectionClass.addParkingRecord(userName, plateNumberTextBox.Text, FloorSlot, ColumnSlot, RowSlot);
+
+                        setDefault();
+                        successFulParkInMessage.Show();
+                        this.Hide();
+                    }
+                    else
+                    {
+                        errorFillMessage.Text = "Error! Vehicle is Already Parked in!";
+                        errorFillMessage.Show();
+                    }
+                }
+                else if (sqlConnectionClass.isDuplicatePlateNumbber(plateNumberTextBox.Text))
                 {
                     errorFillMessage.Text = "Error! Duplicate Plate Number!";
                     errorFillMessage.Show();
                 }
                 else
                 {
+
+
+                    /*string[,] vehicleBrands = {
+                                                { "Yamaha", "Honda", "Kawasaki", "Suzuki", "Harley-Davidson" },
+                                                { "Toyota", "Honda", "Ford", "Chevrolet", "Volkswagen" },
+                                                { "Toyota", "Ford", "Honda", "Jeep", "BMW" },
+                                                { "Mercedes-Benz", "Ford", "Chrysler", "Volkswagen", "Honda" }
+                                            };
+                    string[] vehicleTypes = { "MotorBike", "Sedan", "SUV", "Van" };
+                    string alphabet = "ABCDEFGHIJKLMOPQRSTUVWXYZ";
+                    string number = "1234567890";
+                    Random ran = new Random();
+
+                    for (int i = 0; i < 10; i++)
+                    {
+                        string plate = "";
+                        for (int j = 0; j < 7; j++)
+                        {
+                            if (j < 4) plate += alphabet[ran.Next(alphabet.Length)];
+                            else plate += number[ran.Next(number.Length)];
+                        }
+                        int rand = ran.Next(0, 4);
+                        sqlConnectionClass.addVehicle(plate, vehicleTypes[rand], vehicleBrands[rand, ran.Next(0, 5)]);
+
+                    }*/
+                    sqlConnectionClass.addVehicle(plateNumberTextBox.Text, comboVehicleType.Text, comboVehicleBrand.Text);
+                    sqlConnectionClass.addParkingRecord(userName, plateNumberTextBox.Text, FloorSlot, ColumnSlot, RowSlot);
+
                     counter++;
-                    parkOutPanel.addParkInTime(DateTime.Now.ToString());
-                    parkOutPanel.addPlateNumber(plateNumberTextBox.Text);
-                    parkOutPanel.addVehicleBrand(comboVehicleBrand.Text);
-                    parkOutPanel.addVehicleType(comboVehicleType.Text);
                     parkOutPanel.parkedInVehicles();
                     setDefault();
                     successFulParkInMessage.Show();
                     this.Hide();
                 }
+                
+
             }
         }
         public void setDefault() 
@@ -153,7 +208,7 @@ namespace ParkInParkOut
         }
         public void setCounter()
         {
-            counter--;
+            counter = sqlConnectionClass.getList();
         }
         private void showIncorrectMessage(object sender, EventArgs e)
         {
@@ -166,7 +221,7 @@ namespace ParkInParkOut
             if (comboVehicleType.Text == "")
             {
                 comboVehicleType.Text = "Vehicle Type";
-                comboVehicleType.ForeColor = Color.White;
+                comboVehicleType.ForeColor = Color.ForestGreen;
             }
         }
 
@@ -175,20 +230,29 @@ namespace ParkInParkOut
             if (comboVehicleBrand.Text == "")
             {
                 comboVehicleBrand.Text = "Vehicle Brand";
-                comboVehicleBrand.ForeColor = Color.White;
+                comboVehicleBrand.ForeColor = Color.ForestGreen;
             }
         }
 
 
-        private void ParkInPanel_Load(object sender, EventArgs e)
+/*        private void ParkInPanel_Load(object sender, EventArgs e)
         {
            // comboVehicleBrand.ForeColor= Color.White;
-        }
+        }*/
 
         public void SetSuccessfulMessage(SuccessFulParkInMessage successFulParkInMessage)
         { 
             this.successFulParkInMessage = successFulParkInMessage;
         }
 
+        private void comboVehicleType_KeyDown(object sender, KeyEventArgs e)
+        {
+            if ((e.KeyCode == Keys.Down))
+            {
+                comboVehicleType.Icon_Click(sender, e);
+            }
+        }
+
+        
     }
 }
